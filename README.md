@@ -81,17 +81,6 @@ L'application s'ouvre sur http://localhost:8501
 
 Remplir le fichier `.env` avec vos clés API (cf le fichier env.example)
 
-
-## 📊 Résultats Validés
-
-| Question | Stratégie | Résultat |
-|----------|-----------|----------|
-| "Qu'est-ce que PG-M01?" | Simple | ✅ Description complète |
-| "Événements avec produits vendus à Pollutec?" | Multi-hop | ✅ 6 événements |
-| "CO2 total PG-M01?" | Multi-hop | ✅ 9290.9 tonnes |
-| "Salons ventes collectivités?" | Multi-hop | ✅ 11 salons (top: 5.82M€) |
-| "Projets R&D festivals?" | Multi-hop | ✅ 4 projets (€4.23M/an) |
-
 ## 🐛 Troubleshooting
 
 ### Timeout Qdrant lors du premier lancement
