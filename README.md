@@ -5,16 +5,20 @@ Système de Retrieval-Augmented Generation hybride combinant **recherche vectori
 **🚀 Démarrage rapide:**
 ```bash
 ./deploy.sh          # Installation complète
+
+source venv/bin/activate
 streamlit run app_hybrid.py  # Lancer l'application
 ```
+
 
 ## 🎯 Fonctionnalités
 
 - **RAG Classique**: Recherche vectorielle pour questions descriptives simples
+![rag classico](assets/simplerag.png)
 - **RAG Hybride**: Combine vecteurs + graphe pour questions relationnelles complexes
-- **Routeur Intelligent**: Classification automatique des questions (100% précision)
-- **Multi-hop Reasoning**: Traverse le graphe pour répondre à des questions en plusieurs étapes
-- **Interface Streamlit**: 3 onglets (Classique, Hybride, Auto)
+![rag multihop](assets/multihop.png)
+- **Routeur Intelligent**: Classification automatique des questions
+![rag multihop](assets/routeur.png)
 
 ## 🏗️ Architecture
 
@@ -25,22 +29,6 @@ Question → Routeur → [RAG Simple] ou [RAG Hybride]
                           ↓              ↓
                        Réponse      Réponse enrichie
 ```
-
-## 🚀 Installation & Démarrage
-
-### Installation Rapide (Recommandée)
-
-```bash
-./deploy.sh
-```
-
-Ce script automatique :
-- ✅ Vérifie Python et pip
-- ✅ Crée/active l'environnement virtuel
-- ✅ Installe toutes les dépendances
-- ✅ Configure les variables d'environnement
-- ✅ Initialise Neo4j et Qdrant
-- ✅ Charge les données
 
 ### Installation Manuelle
 
@@ -69,24 +57,6 @@ streamlit run app_hybrid.py
 ```
 
 L'application s'ouvre sur http://localhost:8501
-
-## 📖 Utilisation
-
-### Interface à 3 Onglets
-
-**1. RAG Classique (Qdrant uniquement)**
-- Pour questions descriptives: "Qu'est-ce que le PG-M01?"
-- Recherche vectorielle sémantique
-
-**2. RAG+Graph Multi-Hop**
-- Pour questions relationnelles complexes
-- Combine documents + graphe de connaissances
-- Affiche sources vectorielles ET graphe séparément
-
-**3. Routeur Intelligent (Auto)É**
-- Choisit automatiquement la meilleure stratégie
-- Affiche la décision et son explication
-- Mode le plus intelligent et efficace
 
 ## 📁 Structure du Projet
 
@@ -121,30 +91,6 @@ Remplir le fichier `.env` avec vos clés API (cf le fichier env.example)
 | "CO2 total PG-M01?" | Multi-hop | ✅ 9290.9 tonnes |
 | "Salons ventes collectivités?" | Multi-hop | ✅ 11 salons (top: 5.82M€) |
 | "Projets R&D festivals?" | Multi-hop | ✅ 4 projets (€4.23M/an) |
-
-**Précision du routeur: 100%** sur les tests
-
-```
-
-
-## 🛠️ Commandes Utiles
-
-```bash
-# Déploiement complet (recommandé pour première installation)
-./deploy.sh
-
-# Réinitialiser le système
-python init_system.py
-
-# Recharger Neo4j
-python neo4j_loader.py
-
-# Lancer l'app
-streamlit run app_hybrid.py
-
-# Supprimer collection Qdrant (via l'interface: bouton "🗑️ Réinitialiser")
-```
-
 
 ## 🐛 Troubleshooting
 
