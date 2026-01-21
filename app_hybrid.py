@@ -340,6 +340,56 @@ def main():
             </div>
         """, unsafe_allow_html=True)
 
+        st.markdown("### 📤 Importer des documents")
+        st.markdown("""
+            <div style='background: rgba(59, 130, 246, 0.1); padding: 0.5rem; border-radius: 6px; margin-bottom: 0.75rem; font-size: 0.85rem;'>
+                💡 Glissez-déposez vos fichiers ci-dessous
+            </div>
+        """, unsafe_allow_html=True)
+
+        uploaded_files = st.file_uploader(
+            "Choisissez des fichiers",
+            type=['txt', 'json', 'csv', 'pdf'],
+            accept_multiple_files=True,
+            help="Formats supportés: TXT, JSON, CSV, PDF",
+            label_visibility="collapsed"
+        )
+
+        if uploaded_files:
+            st.markdown(f"**{len(uploaded_files)} fichier(s) sélectionné(s)**")
+
+            if st.button("📥 Sauvegarder et indexer", use_container_width=True, type="primary"):
+                data_dir = Path("data")
+                data_dir.mkdir(exist_ok=True)
+
+                success_count = 0
+                error_count = 0
+
+                with st.spinner("💾 Sauvegarde en cours..."):
+                    for uploaded_file in uploaded_files:
+                        try:
+                            file_path = data_dir / uploaded_file.name
+                            with open(file_path, "wb") as f:
+                                f.write(uploaded_file.getbuffer())
+                            success_count += 1
+                        except Exception as e:
+                            st.error(f"❌ Erreur pour {uploaded_file.name}: {e}")
+                            error_count += 1
+
+                if success_count > 0:
+                    st.success(f"✅ {success_count} fichier(s) sauvegardé(s)!")
+                    st.info("🔄 Rechargez la page pour indexer les nouveaux documents")
+
+                    # Bouton pour recharger immédiatement
+                    if st.button("🔄 Recharger maintenant", use_container_width=True):
+                        st.cache_resource.clear()
+                        st.rerun()
+
+                if error_count > 0:
+                    st.warning(f"⚠️ {error_count} erreur(s) rencontrée(s)")
+
+        st.divider()
+
         st.markdown("### 🔧 Actions système")
         col1, col2 = st.columns(2)
         with col1:
