@@ -1,0 +1,388 @@
+{
+  "company": {
+    "name": "GreenPower Solutions",
+    "rd_department": {
+      "established": 2018,
+      "team_size": "8 engineers",
+      "annual_budget": "€850,000",
+      "focus_areas": ["Battery technology optimization", "Cost reduction", "Energy density improvement", "Second-life battery integration"]
+    }
+  },
+  "active_rd_projects": [
+    {
+      "project_id": "RD-BAT-001",
+      "project_name": "NextGen LFP Cost Optimization",
+      "status": "Active Development",
+      "timeline": {
+        "started": "January 2024",
+        "prototype_completion": "June 2025",
+        "commercial_launch": "Q1 2026"
+      },
+      "objective": "Reduce battery costs by 35% while maintaining same energy capacity using Chinese Grade A+ LiFePO4 cells",
+      "target_products": ["PG-P01", "PG-C01", "PG-M02"],
+      "technology_details": {
+        "current_battery": {
+          "type": "Grade A LiFePO4 (European suppliers)",
+          "cost_per_kwh": "€90/kWh",
+          "supplier": "CATL Europe, BYD Europe",
+          "warranty": "10 years / 6000 cycles"
+        },
+        "new_battery": {
+          "type": "Grade A+ LiFePO4 (Direct China import)",
+          "cost_per_kwh": "€58/kWh",
+          "supplier": "EVE Energy, Gotion High-Tech",
+          "warranty": "8 years / 5000 cycles",
+          "energy_density": "Same as current (160 Wh/kg)"
+        }
+      },
+      "cost_impact_analysis": {
+        "pg_p01_impact": {
+          "current_battery_cost": "€28,800 (320 kWh x €90)",
+          "new_battery_cost": "€18,560 (320 kWh x €58)",
+          "savings_per_unit": "€10,240",
+          "current_total_cost": "€59,000",
+          "new_total_cost": "€48,760",
+          "new_margin_at_same_price": "53.8% (vs current 27.1%)",
+          "recommended_new_price": "€62,000 (maintains 27% margin, passes €13k savings to customer)",
+          "market_advantage": "17% price reduction vs competition"
+        },
+        "pg_c01_impact": {
+          "current_battery_cost": "€9,600 (96 kWh x €100)",
+          "new_battery_cost": "€5,568 (96 kWh x €58)",
+          "savings_per_unit": "€4,032",
+          "current_total_cost": "€21,000",
+          "new_total_cost": "€16,968",
+          "new_margin_at_same_price": "85.6% (vs current 50%)",
+          "recommended_new_price": "€24,000 (maintains 41% margin, passes €7.5k savings to customer)",
+          "market_advantage": "24% price reduction vs competition"
+        }
+      },
+      "risks": [
+        "Import logistics and lead times (8-12 weeks vs 2-4 weeks)",
+        "Currency fluctuation (EUR/CNY)",
+        "Slightly reduced warranty period",
+        "Customer perception of 'Chinese cells' vs European"
+      ],
+      "mitigation_strategy": [
+        "Establish strategic inventory buffer (3 months)",
+        "Currency hedging contracts",
+        "Enhanced quality control protocol",
+        "Marketing emphasis on Grade A+ certification and same performance"
+      ],
+      "projected_annual_savings": "€1.2M (assuming 120 units/year affected)",
+      "related_docs": ["LFP_Cost_Analysis_2024.pdf", "Chinese_Supplier_Audit_Reports.pdf"]
+    },
+    {
+      "project_id": "RD-BAT-002",
+      "project_name": "Tesla Battery Second-Life Extension Program",
+      "status": "Pilot Phase",
+      "timeline": {
+        "started": "March 2024",
+        "pilot_completion": "December 2024",
+        "full_integration": "Q2 2025"
+      },
+      "objective": "Secure long-term supply of reconditioned Tesla batteries with 40% cost reduction vs new cells",
+      "target_products": ["PG-M01", "PG-U01"],
+      "technology_details": {
+        "current_source": {
+          "type": "Reconditioned Tesla Model S/X batteries",
+          "cost_per_kwh": "€80/kWh",
+          "capacity_retention": "80-85% of original",
+          "supplier": "European battery refurbishers",
+          "availability": "Limited (depends on EV market)",
+          "warranty": "5 years / 3000 cycles"
+        },
+        "optimized_source": {
+          "type": "Direct partnership with Tesla Gigafactory Berlin",
+          "cost_per_kwh": "€48/kWh",
+          "capacity_retention": "82-88% of original (improved testing)",
+          "supplier": "Tesla Battery Recycling Program",
+          "availability": "Growing (as Model 3/Y batteries age)",
+          "warranty": "6 years / 3500 cycles",
+          "additional_benefit": "Access to Model 3/Y 2170 cells (higher density)"
+        }
+      },
+      "cost_impact_analysis": {
+        "pg_m01_impact": {
+          "current_battery_cost": "€58,000 (720 kWh x €80.56)",
+          "new_battery_cost": "€34,560 (720 kWh x €48)",
+          "savings_per_unit": "€23,440",
+          "current_total_cost": "€118,000",
+          "new_total_cost": "€94,560",
+          "new_margin_at_same_price": "48% (vs current 15.7%)",
+          "recommended_new_price": "€115,000 (maintains 22% margin, passes €25k savings to customer)",
+          "market_advantage": "18% price reduction, improved competitiveness"
+        },
+        "pg_u01_impact": {
+          "current_battery_cost": "€140,000 (2000 kWh x €70 blended rate)",
+          "new_battery_cost": "€96,000 (2000 kWh x €48)",
+          "savings_per_unit": "€44,000",
+          "current_total_cost": "€291,000",
+          "new_total_cost": "€247,000",
+          "new_margin_at_same_price": "62% (vs current 37.5%)",
+          "recommended_new_price": "€330,000 (maintains 34% margin, passes €70k savings to customer)",
+          "market_advantage": "18% price reduction on flagship product"
+        }
+      },
+      "partnership_terms": {
+        "minimum_annual_purchase": "1.5 MWh battery packs",
+        "priority_allocation": "As Tesla Certified Second-Life Partner",
+        "technical_support": "Direct access to Tesla battery engineers",
+        "certification": "Tesla Quality Seal on marketing materials"
+      },
+      "risks": [
+        "Tesla battery supply volatility",
+        "Dependence on single supplier",
+        "Battery degradation variability"
+      ],
+      "mitigation_strategy": [
+        "Dual-source strategy (maintain relationship with European refurbishers)",
+        "Advanced battery testing equipment investment (€120k)",
+        "Conservative capacity rating (use 80% retention minimum)"
+      ],
+      "projected_annual_savings": "€2.8M (assuming 80 units/year affected)",
+      "sustainability_bonus": "Enhanced circular economy credentials, partnership with Tesla brand",
+      "related_docs": ["Tesla_Partnership_MOU_2024.pdf", "Second_Life_Battery_Testing_Protocol.pdf"]
+    },
+    {
+      "project_id": "RD-BAT-003",
+      "project_name": "Sodium-Ion Battery Pilot for Entry-Level Products",
+      "status": "Research Phase",
+      "timeline": {
+        "started": "September 2024",
+        "lab_testing": "Q2 2025",
+        "prototype": "Q4 2025",
+        "commercial_consideration": "2026+"
+      },
+      "objective": "Evaluate sodium-ion batteries as ultra-low-cost alternative for PG-M02 Mini model",
+      "target_products": ["PG-M02", "Future budget product line"],
+      "technology_details": {
+        "current_battery_pg_m02": {
+          "type": "LiFePO4 compact cells",
+          "capacity": "20 kWh",
+          "cost_per_kwh": "€120/kWh (small pack premium)",
+          "total_battery_cost": "€2,400",
+          "energy_density": "145 Wh/kg",
+          "cycle_life": "4000+ cycles"
+        },
+        "sodium_ion_alternative": {
+          "type": "Na-ion cells (CATL, HiNa Battery)",
+          "capacity": "20 kWh (same)",
+          "cost_per_kwh": "€65/kWh",
+          "total_battery_cost": "€1,300",
+          "energy_density": "140 Wh/kg (3% lower, minimal impact)",
+          "cycle_life": "3000+ cycles (acceptable for budget model)",
+          "temperature_performance": "Superior in cold weather (-20°C to +60°C)",
+          "safety": "Non-flammable (no thermal runaway risk)"
+        }
+      },
+      "cost_impact_analysis": {
+        "pg_m02_impact": {
+          "current_total_cost": "€5,700",
+          "battery_savings": "€1,100",
+          "new_total_cost": "€4,600",
+          "current_price": "€10,250",
+          "new_margin_at_same_price": "122% (vs current 79.8%)",
+          "recommended_strategy": "Launch 'PG-M02-Na' budget variant at €7,500",
+          "new_margin": "63%",
+          "market_positioning": "Entry-level product for price-sensitive customers",
+          "competitive_advantage": "€2,750 cheaper than current Mini model"
+        }
+      },
+      "advantages": [
+        "Abundant raw materials (sodium vs lithium)",
+        "No cobalt or nickel required",
+        "Better cold-weather performance",
+        "Lower fire risk",
+        "Future-proof against lithium price volatility"
+      ],
+      "challenges": [
+        "Slightly lower energy density (5% heavier for same capacity)",
+        "Newer technology (less field data)",
+        "Limited supplier ecosystem (currently 3-4 major suppliers)",
+        "Customer education required"
+      ],
+      "go_no_go_criteria": {
+        "must_achieve": [
+          "Cost below €70/kWh",
+          "Minimum 3000 cycle life demonstrated",
+          "3-year field trial data from supplier",
+          "CE certification for EU market"
+        ],
+        "decision_date": "December 2025"
+      },
+      "market_opportunity": "Target 500 units/year budget segment (events, small contractors)",
+      "projected_annual_impact": "€550k additional margin OR €1.4M revenue from new customer segment",
+      "related_docs": ["Sodium_Ion_Technology_Review_2024.pdf", "CATL_Na_Ion_Specifications.pdf"]
+    },
+    {
+      "project_id": "RD-CONT-001",
+      "project_name": "Modular Container Design for PG-U01 Ultra",
+      "status": "Engineering Phase",
+      "timeline": {
+        "started": "June 2024",
+        "prototype": "March 2025",
+        "production_launch": "Q3 2025"
+      },
+      "objective": "Reduce container/enclosure costs by 30% through modular design and local manufacturing",
+      "target_products": ["PG-U01"],
+      "current_situation": {
+        "container_type": "Custom-fabricated 6m ISO container",
+        "supplier": "Specialized industrial fabricator (Germany)",
+        "cost": "€35,000 per unit",
+        "features": "IP65 rated, HVAC, cable management, custom cutouts",
+        "lead_time": "8 weeks",
+        "pain_points": [
+          "High cost due to customization",
+          "Long lead times",
+          "Transportation costs from Germany"
+        ]
+      },
+      "new_design": {
+        "container_type": "Modified standard 20ft shipping container + modular insert kit",
+        "base_container": "Standard ISO 20ft container (€3,500)",
+        "modular_insert_kit": "Pre-fabricated interior (€12,000)",
+        "weatherproofing": "IP65 upgrade kit (€3,200)",
+        "hvac_system": "Off-the-shelf industrial AC unit (€4,800)",
+        "total_cost": "€23,500",
+        "supplier_strategy": "Container from local port, kit manufactured in France",
+        "lead_time": "4 weeks",
+        "advantages": [
+          "33% cost reduction (€11,500 savings)",
+          "50% faster delivery",
+          "Easier to service (modular components)",
+          "Can be retrofitted to existing containers"
+        ]
+      },
+      "cost_impact_pg_u01": {
+        "current_total_cost": "€291,000",
+        "new_total_cost": "€279,500",
+        "savings_per_unit": "€11,500",
+        "combined_with_battery_savings_rd_bat_002": "€55,500 total savings",
+        "new_total_cost_combined": "€235,500",
+        "current_price": "€400,000",
+        "new_margin_combined": "69.8% (vs current 37.5%)",
+        "recommended_strategy": "Maintain €400k price, invest margin in R&D and market expansion",
+        "alternative_strategy": "Reduce price to €350k (passes some savings, maintains 49% margin)"
+      },
+      "additional_benefits": [
+        "Retrofit kit available for existing customers (€15k upgrade)",
+        "Easier international shipping (standard container dimensions)",
+        "Reduced carbon footprint (local manufacturing)"
+      ],
+      "investment_required": {
+        "tooling_and_jigs": "€85,000",
+        "prototype_development": "€45,000",
+        "certification_testing": "€28,000",
+        "total_investment": "€158,000",
+        "payback_period": "14 units (approximately 10 months at current sales rate)"
+      },
+      "projected_annual_savings": "€230k (assuming 20 PG-U01 units/year)",
+      "related_docs": ["Modular_Container_Design_Specs.pdf", "Cost_Comparison_Analysis_2024.pdf"]
+    },
+    {
+      "project_id": "RD-SMART-001",
+      "project_name": "AI-Powered Energy Management System",
+      "status": "Beta Testing",
+      "timeline": {
+        "started": "October 2023",
+        "beta_launch": "January 2025",
+        "full_commercial_launch": "Q2 2025"
+      },
+      "objective": "Increase battery runtime by 20-30% through predictive load management and solar optimization",
+      "target_products": ["All models"],
+      "technology_overview": {
+        "current_system": "Rule-based battery management (charge when sunny, discharge on demand)",
+        "new_system": "AI-driven predictive system using weather forecasts, load patterns, and usage history",
+        "key_features": [
+          "Weather forecast integration (3-day solar prediction)",
+          "Load pattern learning (identifies typical usage)",
+          "Predictive battery reserve management",
+          "Automatic load shedding for non-critical systems",
+          "Solar panel angle optimization recommendations"
+        ]
+      },
+      "performance_improvements": {
+        "runtime_extension": "22-28% increase in autonomous operation time",
+        "fuel_savings_hybrid_mode": "Additional 5-8% diesel reduction",
+        "battery_lifespan": "10% increase through optimized charge/discharge cycles",
+        "example_scenario": {
+          "product": "PG-M01 at 3-day festival",
+          "current_behavior": "Runs out of power on day 3 morning, requires diesel backup",
+          "ai_optimized_behavior": "Completes full 3 days autonomously by load balancing and predictive charging",
+          "customer_benefit": "No diesel costs (€450 saved), full zero-emission operation"
+        }
+      },
+      "business_model": {
+        "included_free": "Basic AI features for all new units",
+        "premium_subscription": "€500/year for Advanced AI + Cloud Analytics (PG-ACC-04 Enhanced)",
+        "retrofit_available": "€1,200 one-time for hardware + software upgrade on existing units",
+        "revenue_potential": "€175k annual subscription revenue (assuming 350 active premium users by 2026)"
+      },
+      "development_costs": {
+        "software_development": "€240,000 (2023-2024)",
+        "cloud_infrastructure": "€35,000/year",
+        "ongoing_maintenance": "€60,000/year",
+        "total_investment_to_date": "€380,000"
+      },
+      "customer_value": {
+        "reduced_operating_costs": "€300-800/year per unit (fuel savings)",
+        "increased_uptime": "15-20% reduction in power interruptions",
+        "competitive_advantage": "Only solar generator with AI optimization in European market",
+        "marketing_angle": "Smart batteries that think ahead"
+      },
+      "risks": [
+        "Reliance on internet connectivity for weather data",
+        "Customer learning curve"
+      ],
+      "mitigation": [
+        "Offline mode with cached forecasts",
+        "Simple mobile app interface",
+        "Video tutorials and training"
+      ],
+      "related_docs": ["AI_Energy_Management_White_Paper.pdf", "Beta_Testing_Results_Q4_2024.pdf"]
+    }
+  ],
+  "completed_rd_projects": [
+    {
+      "project_id": "RD-BAT-HIST-001",
+      "project_name": "Second-Life EV Battery Integration",
+      "status": "Completed (2018-2020)",
+      "outcome": "Successfully pioneered use of reconditioned EV batteries in commercial solar generators",
+      "impact": "60% cost reduction vs new batteries, established GreenPower's market differentiation",
+      "products_enabled": ["PG-U01", "PG-M01"]
+    }
+  ],
+  "future_research_areas": [
+    {
+      "area": "Solid-State Battery Integration",
+      "horizon": "2027-2028",
+      "potential": "2x energy density, 50% cost reduction long-term",
+      "challenge": "Technology still in early commercialization phase"
+    },
+    {
+      "area": "Vehicle-to-Grid (V2G) Integration",
+      "horizon": "2026",
+      "potential": "Use customer EVs as additional battery storage",
+      "challenge": "Requires partnerships with automakers"
+    },
+    {
+      "area": "Green Hydrogen Hybrid Systems",
+      "horizon": "2028+",
+      "potential": "Extended runtime for ultra-long events (weeks)",
+      "challenge": "High cost, infrastructure requirements"
+    }
+  ],
+  "rd_financial_summary": {
+    "total_active_investment": "€1,538,000 (2024-2025)",
+    "projected_annual_cost_savings_2026": "€4.98M/year (if all projects succeed)",
+    "projected_margin_improvement": "12-18 percentage points across product line",
+    "strategic_positioning": "Maintain premium quality, pass 40-50% of savings to customers for market share growth"
+  },
+  "competitive_intelligence": {
+    "market_trend": "Competitors still using 100% new battery cells",
+    "greenpower_advantage": "2-3 years ahead in second-life battery expertise",
+    "threat": "Chinese manufacturers entering EU market with low-cost LFP systems",
+    "response_strategy": "Accelerate cost reduction R&D while emphasizing quality, warranty, and local service"
+  }
+}

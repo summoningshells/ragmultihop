@@ -1,0 +1,808 @@
+{
+  "company_events": {
+    "company_name": "GreenPower Solutions",
+    "year_covered": "2024-2025",
+    "total_events": 32,
+    "total_co2_saved": "5,840 tonnes",
+    "total_attendees_powered": "387,000",
+    "international_expansion": ["Spain", "Italy", "France"]
+  },
+  "trade_shows_exhibitions": [
+    {
+      "event_id": "TS-001",
+      "event_name": "EnerGreen Expo Montpellier",
+      "type": "Trade Show",
+      "location": "Montpellier Exhibition Center, France",
+      "date": "December 10-12, 2024",
+      "greenpower_participation": {
+        "booth_number": "Hall B, Stand 247",
+        "models_displayed": ["PG-M01", "PG-P01", "PG-C01"],
+        "attendance": "12,500 professional visitors",
+        "highlights": [
+          "Live demonstration of hybrid diesel-solar system",
+          "Conference presentation: 'Zero Emission Construction Sites'",
+          "Launch of PG-ACC-04 Remote Monitoring Premium"
+        ],
+        "press_coverage": [
+          "Article in GreenTech Magazine (January 2025)",
+          "TV interview on France 3 Regional News"
+        ]
+      },
+      "sales_data": {
+        "leads_generated": 124,
+        "sales_closed": {
+          "particuliers": {
+            "units": 3,
+            "products": ["PG-M02 x2", "PG-C01 x1"],
+            "total_revenue": "€41,750"
+          },
+          "entreprises": {
+            "units": 7,
+            "products": ["PG-M01 x3", "PG-P01 x4"],
+            "total_revenue": "€720,000"
+          },
+          "collectivites": {
+            "units": 2,
+            "products": ["PG-P01 x2"],
+            "total_revenue": "€150,000"
+          }
+        },
+        "total_sales": "€911,750"
+      },
+      "website": "greenpower.com/events/energreen-2024",
+      "related_docs": ["EnerGreen_Expo_Report_2024.pdf", "Press_Kit_Montpellier.pdf"]
+    },
+    {
+      "event_id": "TS-002",
+      "event_name": "CleanPower Summit France",
+      "type": "Competition/Conference",
+      "location": "Paris, France",
+      "date": "May 20-22, 2025",
+      "greenpower_participation": {
+        "achievement": "Finalist (Top 40) in CleanTech Innovation Category",
+        "category": "Energy Storage & Generation Solutions",
+        "award_details": "Selected among 40 finalists from 200+ applications nationwide",
+        "jury_feedback": "Outstanding innovation in second-life battery integration and mobile solar systems",
+        "presentation_topic": "Scaling Autonomous Solar Generation for Industrial Applications"
+      },
+      "sales_data": {
+        "leads_generated": 87,
+        "sales_closed": {
+          "particuliers": {
+            "units": 1,
+            "products": ["PG-C01 x1"],
+            "total_revenue": "€31,500"
+          },
+          "entreprises": {
+            "units": 4,
+            "products": ["PG-M01 x2", "PG-P01 x2"],
+            "total_revenue": "€430,000"
+          },
+          "collectivites": {
+            "units": 1,
+            "products": ["PG-U01 x1"],
+            "total_revenue": "€400,000"
+          }
+        },
+        "total_sales": "€861,500"
+      },
+      "website": "greenpower.com/news/cleanpower-summit-2025",
+      "related_docs": ["CleanTech_Finalist_Certificate_2025.pdf", "Summit_Presentation_Slides.pdf"]
+    },
+    {
+      "event_id": "TS-003",
+      "event_name": "Business Excellence Awards - Pyrénées-Orientales",
+      "type": "Regional Business Awards",
+      "location": "Perpignan, France",
+      "date": "May 20, 2025",
+      "greenpower_participation": {
+        "nomination": "Innovation Prize - Green Technology Category",
+        "media_coverage": "Featured article in L'Indépendant Business Journal (May 9, 2025)",
+        "recognition": "Honored as one of 15 regional innovation leaders",
+        "company_representative": "Vincent Theroux, CEO & Founder"
+      },
+      "sales_data": {
+        "leads_generated": 34,
+        "sales_closed": {
+          "particuliers": {
+            "units": 2,
+            "products": ["PG-M02 x2"],
+            "total_revenue": "€20,500"
+          },
+          "entreprises": {
+            "units": 3,
+            "products": ["PG-P01 x3"],
+            "total_revenue": "€225,000"
+          },
+          "collectivites": {
+            "units": 0,
+            "products": [],
+            "total_revenue": "€0"
+          }
+        },
+        "total_sales": "€245,500"
+      },
+      "website": "greenpower.com/news/business-awards-2025",
+      "related_docs": ["Press_Article_LIndependant_May2025.pdf", "Awards_Ceremony_Photos.pdf"]
+    },
+    {
+      "event_id": "TS-004",
+      "event_name": "Bio360 Renewable Energy Expo",
+      "type": "International Trade Show",
+      "location": "Nantes Expo Center, France",
+      "date": "January 24-25, 2024",
+      "greenpower_participation": {
+        "booth_type": "Premium 60m² Exhibition Space",
+        "models_displayed": ["PG-U01", "PG-M01"],
+        "interactive_demos": [
+          "Virtual reality tour of solar generator internals",
+          "Live energy monitoring dashboard",
+          "Battery second-life testing station"
+        ],
+        "partnerships_announced": "Collaboration agreement with 3 major construction companies",
+        "visitor_count": "450+ booth visitors, 5,000 trade show attendees"
+      },
+      "sales_data": {
+        "leads_generated": 156,
+        "sales_closed": {
+          "particuliers": {
+            "units": 1,
+            "products": ["PG-C01 x1"],
+            "total_revenue": "€31,500"
+          },
+          "entreprises": {
+            "units": 9,
+            "products": ["PG-U01 x1", "PG-M01 x5", "PG-P01 x3"],
+            "total_revenue": "€1,325,000"
+          },
+          "collectivites": {
+            "units": 2,
+            "products": ["PG-M01 x2"],
+            "total_revenue": "€280,000"
+          }
+        },
+        "total_sales": "€1,636,500"
+      },
+      "website": "greenpower.com/events/bio360-2024",
+      "related_docs": ["Bio360_Booth_Design.pdf", "Partnership_Announcements_2024.pdf"]
+    },
+    {
+      "event_id": "TS-005",
+      "event_name": "Genera Barcelona - International Energy & Environment Fair",
+      "type": "International Trade Show",
+      "location": "Fira de Barcelona, Spain",
+      "date": "February 6-8, 2024",
+      "greenpower_participation": {
+        "booth_number": "Hall 7, Stand C42",
+        "models_displayed": ["PG-U01", "PG-M01", "PG-P01"],
+        "attendance": "23,000 professional visitors",
+        "highlights": [
+          "First major exhibition in Spanish market",
+          "Partnership announcement with 2 Spanish construction firms",
+          "Conference: 'Sistemas Autónomos de Energía Solar para Eventos'"
+        ],
+        "press_coverage": [
+          "Feature in Energías Renovables Magazine",
+          "Interview on Catalunya Ràdio"
+        ]
+      },
+      "sales_data": {
+        "leads_generated": 287,
+        "sales_closed": {
+          "particuliers": {
+            "units": 4,
+            "products": ["PG-C01 x3", "PG-M02 x1"],
+            "total_revenue": "€104,750"
+          },
+          "entreprises": {
+            "units": 18,
+            "products": ["PG-U01 x2", "PG-M01 x9", "PG-P01 x7"],
+            "total_revenue": "€2,585,000"
+          },
+          "collectivites": {
+            "units": 5,
+            "products": ["PG-M01 x3", "PG-P01 x2"],
+            "total_revenue": "€570,000"
+          }
+        },
+        "total_sales": "€3,259,750"
+      },
+      "website": "greenpower.com/events/genera-barcelona-2024",
+      "related_docs": ["Genera_Barcelona_Report_2024.pdf", "Spanish_Market_Entry_Strategy.pdf"]
+    },
+    {
+      "event_id": "TS-006",
+      "event_name": "Key Energy - International Expo for Renewable Energy",
+      "type": "International Trade Show",
+      "location": "Rimini Expo Centre, Italy",
+      "date": "March 5-7, 2024",
+      "greenpower_participation": {
+        "booth_number": "Padiglione A3, Stand 156",
+        "models_displayed": ["PG-M01", "PG-P01", "PG-C01"],
+        "attendance": "18,500 professional visitors",
+        "highlights": [
+          "Italian market entry presentation",
+          "Technical workshop on hybrid systems",
+          "Collaboration with Italian festival organizers association"
+        ],
+        "press_coverage": [
+          "Article in QualEnergia.it",
+          "Feature in Il Sole 24 Ore Green Economy section"
+        ]
+      },
+      "sales_data": {
+        "leads_generated": 198,
+        "sales_closed": {
+          "particuliers": {
+            "units": 3,
+            "products": ["PG-C01 x2", "PG-M02 x1"],
+            "total_revenue": "€73,250"
+          },
+          "entreprises": {
+            "units": 12,
+            "products": ["PG-M01 x6", "PG-P01 x6"],
+            "total_revenue": "€1,290,000"
+          },
+          "collectivites": {
+            "units": 3,
+            "products": ["PG-M01 x2", "PG-P01 x1"],
+            "total_revenue": "€355,000"
+          }
+        },
+        "total_sales": "€1,718,250"
+      },
+      "website": "greenpower.com/events/key-energy-rimini-2024",
+      "related_docs": ["KeyEnergy_Italy_Report_2024.pdf", "Italian_Partnerships_Overview.pdf"]
+    },
+    {
+      "event_id": "TS-007",
+      "event_name": "Ecomondo - Green and Circular Economy Expo",
+      "type": "International Trade Show",
+      "location": "Rimini Expo Centre, Italy",
+      "date": "November 7-10, 2024",
+      "greenpower_participation": {
+        "booth_number": "Padiglione B5, Stand 201",
+        "models_displayed": ["PG-U01", "PG-M01", "PG-P01"],
+        "attendance": "31,000 professional visitors",
+        "highlights": [
+          "Launch of Italian language technical documentation",
+          "Conference: 'Economia Circolare nelle Batterie: Seconda Vita per Veicoli Elettrici'",
+          "Partnership with Rome municipality for sustainable events"
+        ],
+        "press_coverage": [
+          "Cover story in Rinnovabili.it Magazine",
+          "RAI News interview segment"
+        ]
+      },
+      "sales_data": {
+        "leads_generated": 342,
+        "sales_closed": {
+          "particuliers": {
+            "units": 6,
+            "products": ["PG-C01 x4", "PG-M02 x2"],
+            "total_revenue": "€146,500"
+          },
+          "entreprises": {
+            "units": 22,
+            "products": ["PG-U01 x3", "PG-M01 x11", "PG-P01 x8"],
+            "total_revenue": "€3,340,000"
+          },
+          "collectivites": {
+            "units": 7,
+            "products": ["PG-U01 x1", "PG-M01 x4", "PG-P01 x2"],
+            "total_revenue": "€1,110,000"
+          }
+        },
+        "total_sales": "€4,596,500"
+      },
+      "website": "greenpower.com/events/ecomondo-2024",
+      "related_docs": ["Ecomondo_Success_Report_2024.pdf", "Rome_Municipality_Partnership.pdf"]
+    },
+    {
+      "event_id": "TS-008",
+      "event_name": "Solar Power Summit Madrid",
+      "type": "Conference & Trade Show",
+      "location": "IFEMA Madrid, Spain",
+      "date": "October 15-17, 2024",
+      "greenpower_participation": {
+        "booth_number": "Pabellón 8, Stand 8D12",
+        "models_displayed": ["PG-M01", "PG-P01"],
+        "attendance": "14,200 professional visitors",
+        "highlights": [
+          "Keynote speech: 'Almacenamiento de Energía Móvil para el Sector de Construcción'",
+          "Demo of remote monitoring platform in Spanish",
+          "Partnership with Spanish events industry association"
+        ],
+        "press_coverage": [
+          "Feature in El Economista - Empresas Verdes section"
+        ]
+      },
+      "sales_data": {
+        "leads_generated": 167,
+        "sales_closed": {
+          "particuliers": {
+            "units": 2,
+            "products": ["PG-C01 x2"],
+            "total_revenue": "€63,000"
+          },
+          "entreprises": {
+            "units": 11,
+            "products": ["PG-M01 x5", "PG-P01 x6"],
+            "total_revenue": "€1,150,000"
+          },
+          "collectivites": {
+            "units": 4,
+            "products": ["PG-M01 x2", "PG-P01 x2"],
+            "total_revenue": "€430,000"
+          }
+        },
+        "total_sales": "€1,643,000"
+      },
+      "website": "greenpower.com/events/solar-power-madrid-2024",
+      "related_docs": ["Madrid_Summit_Presentation.pdf", "Spanish_Construction_Market_Analysis.pdf"]
+    },
+    {
+      "event_id": "TS-009",
+      "event_name": "Pollutec Paris - Environmental Solutions Exhibition",
+      "type": "International Trade Show",
+      "location": "Paris Nord Villepinte, Île-de-France, France",
+      "date": "September 24-27, 2024",
+      "greenpower_participation": {
+        "booth_number": "Hall 5A, Stand M156",
+        "models_displayed": ["PG-U01", "PG-M01", "PG-P01", "PG-C01"],
+        "attendance": "42,000 professional visitors",
+        "highlights": [
+          "Full product line showcase",
+          "Launch of Grid-Tie option for PG-P01",
+          "Conference: 'Décarbonation des Chantiers en Zone à Faibles Émissions'",
+          "Partnership announcements with Île-de-France municipalities"
+        ],
+        "press_coverage": [
+          "Feature article in Le Moniteur (construction industry)",
+          "TV segment on BFM Business"
+        ]
+      },
+      "sales_data": {
+        "leads_generated": 456,
+        "sales_closed": {
+          "particuliers": {
+            "units": 8,
+            "products": ["PG-C01 x5", "PG-M02 x3"],
+            "total_revenue": "€188,250"
+          },
+          "entreprises": {
+            "units": 28,
+            "products": ["PG-U01 x4", "PG-M01 x15", "PG-P01 x9"],
+            "total_revenue": "€4,375,000"
+          },
+          "collectivites": {
+            "units": 12,
+            "products": ["PG-U01 x2", "PG-M01 x6", "PG-P01 x4"],
+            "total_revenue": "€1,940,000"
+          }
+        },
+        "total_sales": "€6,503,250"
+      },
+      "website": "greenpower.com/events/pollutec-paris-2024",
+      "related_docs": ["Pollutec_Paris_Comprehensive_Report_2024.pdf", "IDF_ZFE_Strategy_Document.pdf"]
+    },
+    {
+      "event_id": "TS-010",
+      "event_name": "Salon des Maires et des Collectivités Locales",
+      "type": "Public Sector Exhibition",
+      "location": "Paris Expo Porte de Versailles, Île-de-France, France",
+      "date": "November 19-21, 2024",
+      "greenpower_participation": {
+        "booth_number": "Pavillon 3, Stand E45",
+        "models_displayed": ["PG-M01", "PG-P01"],
+        "attendance": "35,000 elected officials and municipal decision-makers",
+        "highlights": [
+          "Targeted presentation for local governments",
+          "ROI calculator for municipal events and construction",
+          "Workshop: 'Solutions Énergétiques pour Événements Municipaux Durables'",
+          "Financing options presentation for public procurement"
+        ],
+        "press_coverage": [
+          "Feature in La Gazette des Communes"
+        ]
+      },
+      "sales_data": {
+        "leads_generated": 278,
+        "sales_closed": {
+          "particuliers": {
+            "units": 0,
+            "products": [],
+            "total_revenue": "€0"
+          },
+          "entreprises": {
+            "units": 3,
+            "products": ["PG-M01 x2", "PG-P01 x1"],
+            "total_revenue": "€355,000"
+          },
+          "collectivites": {
+            "units": 18,
+            "products": ["PG-M01 x10", "PG-P01 x8"],
+            "total_revenue": "€2,000,000"
+          }
+        },
+        "total_sales": "€2,355,000"
+      },
+      "website": "greenpower.com/events/salon-maires-2024",
+      "related_docs": ["Municipal_Solutions_Guide_2024.pdf", "Public_Procurement_Documentation.pdf"]
+    },
+    {
+      "event_id": "TS-011",
+      "event_name": "Interclima Paris - HVAC & Energy Efficiency Expo",
+      "type": "Professional Trade Show",
+      "location": "Paris Expo Porte de Versailles, Île-de-France, France",
+      "date": "February 27 - March 1, 2025",
+      "greenpower_participation": {
+        "booth_number": "Pavillon 1, Stand A23",
+        "models_displayed": ["PG-P01", "PG-C01"],
+        "attendance": "27,000 HVAC and energy professionals",
+        "highlights": [
+          "Integration demonstrations with building management systems",
+          "Technical seminar on backup power for data centers",
+          "Launch of building automation integration kit"
+        ],
+        "press_coverage": [
+          "Article in Génie Climatique Magazine"
+        ]
+      },
+      "sales_data": {
+        "leads_generated": 134,
+        "sales_closed": {
+          "particuliers": {
+            "units": 1,
+            "products": ["PG-C01 x1"],
+            "total_revenue": "€31,500"
+          },
+          "entreprises": {
+            "units": 9,
+            "products": ["PG-P01 x7", "PG-C01 x2"],
+            "total_revenue": "€588,000"
+          },
+          "collectivites": {
+            "units": 2,
+            "products": ["PG-P01 x2"],
+            "total_revenue": "€150,000"
+          }
+        },
+        "total_sales": "€769,500"
+      },
+      "website": "greenpower.com/events/interclima-paris-2025",
+      "related_docs": ["Building_Integration_Guide_2025.pdf", "HVAC_Professionals_Brochure.pdf"]
+    },
+    {
+      "event_id": "TS-012",
+      "event_name": "SIFER - Railway Industry Exhibition",
+      "type": "Industrial Trade Show",
+      "location": "Parc des Expositions de Villepinte, Île-de-France, France",
+      "date": "March 25-27, 2025",
+      "greenpower_participation": {
+        "booth_number": "Hall 6, Stand B34",
+        "models_displayed": ["PG-U01", "PG-M01"],
+        "attendance": "19,500 railway and infrastructure professionals",
+        "highlights": [
+          "Demonstration for railway construction site power",
+          "Conference: 'Électrification des Chantiers Ferroviaires'",
+          "Partnership discussions with SNCF Réseau"
+        ],
+        "press_coverage": [
+          "Feature in Rail Passion Magazine"
+        ]
+      },
+      "sales_data": {
+        "leads_generated": 92,
+        "sales_closed": {
+          "particuliers": {
+            "units": 0,
+            "products": [],
+            "total_revenue": "€0"
+          },
+          "entreprises": {
+            "units": 8,
+            "products": ["PG-U01 x2", "PG-M01 x6"],
+            "total_revenue": "€1,640,000"
+          },
+          "collectivites": {
+            "units": 3,
+            "products": ["PG-M01 x3"],
+            "total_revenue": "€420,000"
+          }
+        },
+        "total_sales": "€2,060,000"
+      },
+      "website": "greenpower.com/events/sifer-2025",
+      "related_docs": ["Railway_Construction_Solutions.pdf", "SNCF_Partnership_Discussions.pdf"]
+    }
+  ],
+  "powered_events": [
+    {
+      "event_id": "PE-001",
+      "event_name": "GreenSound Music Festival",
+      "type": "Music Festival",
+      "location": "Bordeaux, France",
+      "date": "September 10-14, 2025",
+      "power_deployment": {
+        "models_used": ["PG-U01 x2", "PG-M01 x4"],
+        "total_capacity": "1,720 kVA",
+        "runtime": "5 days continuous",
+        "attendees": "42,000 festival-goers",
+        "applications": [
+          "Main stage sound system",
+          "LED video walls and lighting",
+          "Food vendor area (12 trucks)",
+          "Backstage and artist facilities"
+        ],
+        "fuel_saved": "8,500 liters diesel avoided",
+        "co2_reduction": "22.7 tonnes CO2 avoided",
+        "media_coverage": "Featured in Festival Magazine (October 2025)"
+      },
+      "client_testimonial": "GreenPower allowed us to achieve our zero-emission goal without compromising on power reliability. The silent operation was a game-changer for our acoustic performances.",
+      "website": "greenpower.com/case-studies/greensound-festival",
+      "related_docs": ["Case_Study_GreenSound_2025.pdf", "Festival_Power_Performance_Report.pdf"]
+    },
+    {
+      "event_id": "PE-002",
+      "event_name": "BioCamp Eco-Summit",
+      "type": "Environmental Conference",
+      "location": "Nantes, France",
+      "date": "June 14-15, 2024",
+      "power_deployment": {
+        "models_used": ["PG-P01 x2", "PG-C01 x3"],
+        "total_capacity": "232 kVA",
+        "runtime": "3 days (setup + event + teardown)",
+        "attendees": "3,500 conference participants",
+        "applications": [
+          "Conference hall AV systems",
+          "Expo booth power distribution",
+          "Catering and coffee stations",
+          "Electric vehicle charging stations"
+        ],
+        "fuel_saved": "1,200 liters diesel avoided",
+        "co2_reduction": "3.2 tonnes CO2 avoided",
+        "special_achievement": "100% renewable energy event certification"
+      },
+      "client_testimonial": "As an environmental organization, we needed power solutions that matched our values. GreenPower delivered completely emission-free electricity for our entire summit.",
+      "website": "greenpower.com/case-studies/biocamp-summit",
+      "related_docs": ["BioCamp_Energy_Audit_2024.pdf", "Renewable_Certification_Summit.pdf"]
+    },
+    {
+      "event_id": "PE-003",
+      "event_name": "Sustainable Cinema Festival",
+      "type": "Film Festival",
+      "location": "Lyon, France",
+      "date": "March 8-15, 2025",
+      "power_deployment": {
+        "models_used": ["PG-M01 x3"],
+        "total_capacity": "540 kVA",
+        "runtime": "8 days continuous",
+        "attendees": "15,000 cinema-goers",
+        "applications": [
+          "Cinema projection equipment (3 screens)",
+          "Lobby and concession lighting",
+          "Film production workshop power",
+          "Media center and press facilities"
+        ],
+        "fuel_saved": "2,800 liters diesel avoided",
+        "co2_reduction": "7.5 tonnes CO2 avoided",
+        "awards": "Eco-Festival Gold Certification 2025"
+      },
+      "client_testimonial": "The silent operation of GreenPower systems was critical for our cinema environments. We powered projection equipment and lighting without any generator noise interfering with screenings.",
+      "website": "greenpower.com/case-studies/cinema-festival-lyon",
+      "related_docs": ["Cinema_Festival_Technical_Specs.pdf", "Eco_Certification_Gold_2025.pdf"]
+    },
+    {
+      "event_id": "PE-004",
+      "event_name": "Paris 2024 Olympic Infrastructure - Construction Sites",
+      "type": "Major Construction Project",
+      "location": "Multiple sites, Île-de-France, France",
+      "date": "January 2023 - July 2024",
+      "power_deployment": {
+        "models_used": ["PG-U01 x5", "PG-M01 x12", "PG-P01 x8"],
+        "total_capacity": "5,140 kVA deployed",
+        "runtime": "18 months continuous operation",
+        "project_scope": "Olympic Village construction, transport infrastructure",
+        "applications": [
+          "Heavy construction equipment",
+          "Site offices and facilities",
+          "Security and lighting systems",
+          "Material processing equipment"
+        ],
+        "fuel_saved": "285,000 liters diesel avoided",
+        "co2_reduction": "762 tonnes CO2 avoided",
+        "compliance": "Full ZFE (Low Emission Zone) compliance for Greater Paris",
+        "recognition": "Paris 2024 Sustainability Award for Construction Innovation"
+      },
+      "client_testimonial": "GreenPower enabled our zero-emission construction commitment for the Olympics. The systems provided reliable power for 18 months across multiple demanding construction sites.",
+      "website": "greenpower.com/case-studies/paris-2024-olympics",
+      "related_docs": ["Olympic_Construction_Case_Study.pdf", "Paris2024_Sustainability_Report.pdf", "ZFE_Compliance_Documentation.pdf"]
+    },
+    {
+      "event_id": "PE-005",
+      "event_name": "Terres du Rhythm Festival",
+      "type": "Eco-Music Festival",
+      "location": "Tours (Indre-et-Loire), France",
+      "date": "July 5-7, 2024",
+      "power_deployment": {
+        "models_used": ["PG-M01 x3", "PG-P01 x2"],
+        "total_capacity": "700 kVA",
+        "runtime": "4 days (setup + event)",
+        "attendees": "28,000 festival-goers",
+        "applications": [
+          "Two music stages",
+          "Eco-village installations",
+          "Food and beverage vendors",
+          "Festival camping facilities"
+        ],
+        "fuel_saved": "4,200 liters diesel avoided",
+        "co2_reduction": "11.2 tonnes CO2 avoided",
+        "unique_feature": "100% autonomous solar operation achieved"
+      },
+      "client_testimonial": "Terres du Rhythm is committed to ecological practices. GreenPower provided completely emission-free power, allowing us to achieve our sustainability goals without compromising the festival experience.",
+      "website": "greenpower.com/case-studies/terres-du-rhythm",
+      "related_docs": ["Terres_Festival_Energy_Report_2024.pdf"]
+    },
+    {
+      "event_id": "PE-006",
+      "event_name": "National Agricultural Show - Organic Pavilion",
+      "type": "Agricultural Exhibition",
+      "location": "Paris (Porte de Versailles), France",
+      "date": "February 24 - March 3, 2024",
+      "power_deployment": {
+        "models_used": ["PG-P01 x4", "PG-C01 x6"],
+        "total_capacity": "464 kVA",
+        "runtime": "10 days continuous",
+        "attendees": "85,000 exhibition visitors",
+        "applications": [
+          "Organic food pavilion vendors",
+          "Agricultural equipment demonstrations",
+          "Educational workshop spaces",
+          "Indoor farming displays with grow lights"
+        ],
+        "fuel_saved": "3,100 liters diesel avoided",
+        "co2_reduction": "8.3 tonnes CO2 avoided",
+        "special_note": "Indoor exhibition - zero emissions critical"
+      },
+      "client_testimonial": "For an indoor agricultural show promoting organic practices, diesel generators were not an option. GreenPower provided clean, reliable power throughout the 10-day exhibition.",
+      "website": "greenpower.com/case-studies/agriculture-show",
+      "related_docs": ["Agricultural_Exhibition_Report_2024.pdf", "Indoor_Power_Solutions_Guide.pdf"]
+    }
+  ],
+  "construction_deployments": [
+    {
+      "deployment_id": "CD-001",
+      "project_name": "Highway A9 Expansion - Valmanya Section",
+      "type": "Civil Engineering / Road Construction",
+      "location": "Valmanya, Pyrénées-Orientales, France",
+      "duration": "6 months (January - June 2023)",
+      "power_deployment": {
+        "models_used": ["PG-M01 x1", "Hybrid mode with existing diesel generator"],
+        "total_capacity": "180 kVA",
+        "runtime": "12 hours/day, 6 days/week",
+        "applications": [
+          "Heavy equipment and machinery",
+          "Site trailers and offices",
+          "Security lighting system"
+        ],
+        "fuel_saved": "18,500 liters diesel (95% reduction)",
+        "co2_reduction": "49.5 tonnes CO2 avoided",
+        "cost_savings": "€27,750 in fuel costs over 6 months"
+      },
+      "challenges_solved": [
+        "Remote location with limited grid access",
+        "ZFE compliance requirements",
+        "24/7 security lighting needs"
+      ],
+      "client_testimonial": "The hybrid GreenPower system cut our fuel consumption by 95%. In just 6 months, we saved nearly €30,000 while meeting new emission regulations.",
+      "website": "greenpower.com/case-studies/valmanya-highway",
+      "related_docs": ["Case_Study_Festival_Valmanya_2023.pdf", "Hybrid_Performance_Data_A9.xlsx"]
+    },
+    {
+      "deployment_id": "CD-002",
+      "project_name": "Ponteilla Agricultural Solar Farm Installation",
+      "type": "Solar Farm Construction",
+      "location": "Ponteilla, Pyrénées-Orientales, France",
+      "duration": "Ongoing since 2015",
+      "power_deployment": {
+        "models_used": ["Custom PG-P01 configuration"],
+        "total_capacity": "80 kVA",
+        "runtime": "24/7 autonomous operation",
+        "special_configuration": "100% off-grid, battery-only (no grid connection)",
+        "applications": [
+          "Farm buildings and equipment",
+          "Irrigation systems",
+          "Cold storage facilities",
+          "Residential power"
+        ],
+        "fuel_saved": "Complete diesel elimination (100%)",
+        "co2_reduction": "15 tonnes CO2/year avoided",
+        "client_achievement": "10 years of autonomous operation without grid connection"
+      },
+      "client_testimonial": "Since 2015, I've operated 100% autonomously with GreenPower. No diesel, no grid connection, just solar and batteries. It's transformed my farming operation.",
+      "website": "greenpower.com/case-studies/ponteilla-farm",
+      "related_docs": ["Ponteilla_10Year_Performance_Report.pdf", "Agricultural_Autonomous_Systems_Guide.pdf"]
+    }
+  ],
+  "media_coverage": [
+    {
+      "media_id": "MC-001",
+      "outlet": "France 3 Occitanie - 19/20 Regional News",
+      "type": "Television",
+      "date": "May 19, 2025",
+      "title": "GreenPower: The Perpignan Company Revolutionizing Mobile Solar Energy",
+      "summary": "Feature segment on GreenPower's innovative second-life battery integration and growing presence in construction and events sectors.",
+      "link": "greenpower.com/media/france3-feature-2025",
+      "related_docs": ["TV_Feature_Transcript_France3.pdf"]
+    },
+    {
+      "media_id": "MC-002",
+      "outlet": "Le Journal des Entreprises Occitanie",
+      "type": "Print/Online Publication",
+      "date": "May 9, 2025",
+      "title": "GreenPower Solutions: From Startup to Regional Leader in 14 Years",
+      "summary": "Profile article covering company growth, technology innovation, and expansion plans across France.",
+      "link": "greenpower.com/media/journal-entreprises-may-2025",
+      "related_docs": ["Press_Article_LIndependant_May2025.pdf"]
+    },
+    {
+      "media_id": "MC-003",
+      "outlet": "GreenTech Magazine",
+      "type": "Industry Publication",
+      "date": "January 2025",
+      "title": "Zero-Emission Construction Sites: GreenPower's Blueprint for the Future",
+      "summary": "Technical deep-dive into GreenPower's hybrid systems and their adoption in French ZFE construction zones.",
+      "link": "greenpower.com/media/greentech-magazine-jan-2025",
+      "related_docs": ["GreenTech_Magazine_Article_Jan2025.pdf"]
+    }
+  ],
+  "upcoming_events": [
+    {
+      "event_id": "UE-001",
+      "event_name": "Renewable Energy World Europe",
+      "location": "Barcelona, Spain",
+      "date": "November 18-20, 2025",
+      "participation_details": "Exhibition booth + conference presentation on mobile solar systems"
+    },
+    {
+      "event_id": "UE-002",
+      "event_name": "Paris Construction & Infrastructure Expo",
+      "location": "Paris Nord Villepinte, France",
+      "date": "March 5-7, 2026",
+      "participation_details": "Premium booth with live PG-U01 demonstration + ZFE compliance workshop"
+    },
+    {
+      "event_id": "UE-003",
+      "event_name": "Festival Tech Summit 2026",
+      "location": "Lyon, France",
+      "date": "April 14-16, 2026",
+      "participation_details": "Speaking engagement: 'Powering Events Sustainably: Lessons from 50+ Festivals'"
+    }
+  ],
+  "statistics_summary": {
+    "total_systems_deployed": "347 units (2011-2025)",
+    "total_fuel_displaced": "1.8 million liters diesel",
+    "total_co2_avoided": "4,820 tonnes",
+    "countries_served": ["France", "Spain", "Belgium", "Switzerland", "Italy"],
+    "sectors_served": ["Events & Entertainment", "Construction", "Agriculture", "Film Production", "Emergency Services", "Telecommunications"],
+    "total_trade_show_revenue_2024_2025": "€29,583,000",
+    "breakdown_by_client_type": {
+      "particuliers": {
+        "total_units": 31,
+        "total_revenue": "€704,250",
+        "percentage": "2.4%"
+      },
+      "entreprises": {
+        "total_units": 134,
+        "total_revenue": "€21,023,000",
+        "percentage": "71.0%"
+      },
+      "collectivites": {
+        "total_units": 59,
+        "total_revenue": "€7,855,000",
+        "percentage": "26.6%"
+      }
+    }
+  }
+}

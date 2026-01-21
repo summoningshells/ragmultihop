@@ -1,0 +1,420 @@
+{
+  "company": {
+    "name": "GreenPower Solutions",
+    "tagline": "Autonomous Solar Energy Generation Systems",
+    "founded": 2011,
+    "certifications": ["CE", "DIN VDE 0126-1-1", "C15-100-712"],
+    "warranty": {
+      "converters": "5 years",
+      "solar_panels": "25 years",
+      "batteries": "According to supplier specifications"
+    },
+    "pricing_strategy": {
+      "margin_range": "28-35%",
+      "cost_drivers": ["Battery capacity", "Solar panel capacity", "Inverter quality", "Container/enclosure", "R&D amortization"]
+    }
+  },
+  "products": [
+    {
+      "product_id": "PG-U01",
+      "name": "GreenPower Ultra",
+      "category": "High-Power Autonomous Generator",
+      "power_output": {
+        "continuous": "500 kVA",
+        "peak": "1000 kW",
+        "phases": "Three-phase"
+      },
+      "specifications": {
+        "battery_capacity": "2000 kWh",
+        "battery_type": "Reconditioned EV batteries (second-life)",
+        "solar_panel_capacity": "150 kWp",
+        "inverter": "Victron Energy Quattro 48/15000",
+        "dimensions": "6m x 2.5m x 2.8m (standard container)",
+        "weight": "8500 kg",
+        "operating_temperature": "-10°C to +45°C",
+        "noise_level": "< 45 dB at 1m (silent operation)",
+        "mobility": "Container-mounted, transportable by truck"
+      },
+      "private_cost_breakdown": {
+        "private_battery_cost": "€140,000",
+        "private_solar_panels_cost": "€52,500",
+        "private_inverter_cost": "€28,000",
+        "private_container_enclosure": "€35,000",
+        "private_electronics_monitoring": "€12,000",
+        "private_installation_labor": "€15,000",
+        "private_rd_amortization": "€8,500",
+        "private_total_cost": "€291,000"
+      },
+      "pricing": {
+        "price_range": "€350,000 - €450,000",
+        "average_selling_price": "€400,000",
+        "margin_percentage": "37.5%",
+        "margin_amount": "€109,000"
+      },
+      "features": [
+        "24/7/365 continuous operation",
+        "Remote monitoring via smartphone app",
+        "Predictive maintenance alerts",
+        "Hybrid mode compatible (diesel generator backup)",
+        "Weather-resistant enclosure IP65",
+        "Automatic load balancing",
+        "Zero emissions during operation"
+      ],
+      "use_cases": [
+        "Large industrial sites",
+        "Major music festivals (>50,000 attendees)",
+        "Film production studios",
+        "Emergency backup for hospitals",
+        "Data centers",
+        "Large construction sites"
+      ],
+      "fuel_savings": "95-100% diesel reduction",
+      "co2_reduction": "Up to 150 tonnes/year",
+      "rental_available": true,
+      "installation_time": "2-3 days",
+      "maintenance_interval": "Every 6 months",
+      "related_docs": [
+        "Manual_PG-U01_v4.1.pdf",
+        "Installation_Guide_Container_Systems.pdf",
+        "Remote_Monitoring_Setup_2024.pdf"
+      ]
+    },
+    {
+      "product_id": "PG-M01",
+      "name": "GreenPower Max",
+      "category": "High-Capacity Mobile Generator",
+      "power_output": {
+        "continuous": "180 kVA",
+        "peak": "360 kW",
+        "phases": "Three-phase or single-phase"
+      },
+      "specifications": {
+        "battery_capacity": "720 kWh",
+        "battery_type": "Reconditioned Tesla Model S/X batteries",
+        "solar_panel_capacity": "48 kWp",
+        "inverter": "Victron Energy Quattro 48/10000",
+        "dimensions": "5m x 2m x 2.5m (trailer-mounted)",
+        "weight": "3200 kg",
+        "operating_temperature": "-5°C to +45°C",
+        "noise_level": "< 35 dB at 1m (whisper-quiet)",
+        "mobility": "Trailer-mounted, towable by standard vehicle"
+      },
+      "private_cost_breakdown": {
+        "private_battery_cost": "€58,000",
+        "private_solar_panels_cost": "€16,800",
+        "private_inverter_cost": "€11,500",
+        "private_trailer_enclosure": "€14,000",
+        "private_electronics_monitoring": "€7,200",
+        "private_installation_labor": "€6,500",
+        "private_rd_amortization": "€4,000",
+        "private_total_cost": "€118,000"
+      },
+      "pricing": {
+        "price_range": "€120,000 - €160,000",
+        "average_selling_price": "€140,000",
+        "margin_percentage": "15.7%",
+        "margin_amount": "€22,000"
+      },
+      "features": [
+        "Plug-and-play ready",
+        "Mobile application for real-time monitoring",
+        "Automatic generator start in hybrid mode",
+        "Solar tracking optimization algorithm",
+        "Weatherproof IP54 rated",
+        "Multi-output: 230V/400V",
+        "LED status indicators"
+      ],
+      "use_cases": [
+        "Medium-sized festivals and outdoor events",
+        "Construction sites in low-emission zones",
+        "Food trucks and mobile catering",
+        "Remote agricultural operations",
+        "Film sets and TV production",
+        "Temporary medical facilities"
+      ],
+      "fuel_savings": "85-95% diesel reduction in hybrid mode, 100% autonomous",
+      "co2_reduction": "Up to 48 tonnes/year",
+      "rental_available": true,
+      "rental_price": "€1,800 - €2,500/week",
+      "installation_time": "4-6 hours",
+      "maintenance_interval": "Every 12 months",
+      "related_docs": [
+        "Manual_PG-M01_v3.2.pdf",
+        "Hybrid_Mode_Configuration_Guide.pdf",
+        "Solar_Panel_Maintenance_2024.pdf",
+        "Case_Study_Festival_Valmanya_2023.pdf"
+      ]
+    },
+    {
+      "product_id": "PG-P01",
+      "name": "GreenPower Performance",
+      "category": "Mid-Range Autonomous Generator",
+      "power_output": {
+        "continuous": "80 kVA",
+        "peak": "160 kW",
+        "phases": "Three-phase or single-phase"
+      },
+      "specifications": {
+        "battery_capacity": "320 kWh",
+        "battery_type": "Grade A LiFePO4 cells",
+        "solar_panel_capacity": "24 kWp",
+        "inverter": "Victron Energy MultiPlus-II 48/5000",
+        "dimensions": "3m x 1.5m x 2m (compact cabinet)",
+        "weight": "1400 kg",
+        "operating_temperature": "0°C to +40°C",
+        "noise_level": "< 30 dB at 1m (near-silent)",
+        "mobility": "Pallet-mounted, forklift movable"
+      },
+      "private_cost_breakdown": {
+        "private_battery_cost": "€28,800",
+        "private_solar_panels_cost": "€8,400",
+        "private_inverter_cost": "€5,500",
+        "private_cabinet_enclosure": "€6,200",
+        "private_electronics_monitoring": "€4,100",
+        "private_installation_labor": "€3,500",
+        "private_rd_amortization": "€2,500",
+        "private_total_cost": "€59,000"
+      },
+      "pricing": {
+        "price_range": "€65,000 - €85,000",
+        "average_selling_price": "€75,000",
+        "margin_percentage": "27.1%",
+        "margin_amount": "€16,000"
+      },
+      "features": [
+        "Modular battery expansion capability",
+        "Grid-tie option for energy buyback",
+        "Integrated MPPT solar charge controllers",
+        "Web-based monitoring dashboard",
+        "Automatic load shedding protection",
+        "Color touchscreen interface",
+        "Email/SMS alert notifications"
+      ],
+      "use_cases": [
+        "Small to medium construction sites",
+        "Outdoor events (concerts, sports)",
+        "Agricultural installations",
+        "Telecommunications relay stations",
+        "Camping sites and glamping",
+        "Off-grid residential properties"
+      ],
+      "fuel_savings": "80-90% diesel reduction",
+      "co2_reduction": "Up to 25 tonnes/year",
+      "rental_available": true,
+      "rental_price": "€900 - €1,200/week",
+      "installation_time": "2-4 hours",
+      "maintenance_interval": "Every 12 months",
+      "related_docs": [
+        "Manual_PG-P01_v2.8.pdf",
+        "Grid_Tie_Installation_Procedure.pdf",
+        "Battery_Expansion_Module_Guide.pdf"
+      ]
+    },
+    {
+      "product_id": "PG-C01",
+      "name": "GreenPower Compact",
+      "category": "Portable Solar Generator",
+      "power_output": {
+        "continuous": "24 kVA",
+        "peak": "48 kW",
+        "phases": "Single-phase"
+      },
+      "specifications": {
+        "battery_capacity": "96 kWh",
+        "battery_type": "LiFePO4 prismatic cells",
+        "solar_panel_capacity": "8 kWp",
+        "inverter": "Victron Energy MultiPlus 48/3000",
+        "dimensions": "1.8m x 1m x 1.5m (wheeled case)",
+        "weight": "450 kg",
+        "operating_temperature": "5°C to +40°C",
+        "noise_level": "< 25 dB at 1m (library-quiet)",
+        "mobility": "Wheeled, manually movable"
+      },
+      "private_cost_breakdown": {
+        "private_battery_cost": "€9,600",
+        "private_solar_panels_cost": "€2,800",
+        "private_inverter_cost": "€2,400",
+        "private_wheeled_case": "€2,100",
+        "private_electronics_monitoring": "€1,800",
+        "private_installation_labor": "€1,200",
+        "private_rd_amortization": "€1,100",
+        "private_total_cost": "€21,000"
+      },
+      "pricing": {
+        "price_range": "€28,000 - €35,000",
+        "average_selling_price": "€31,500",
+        "margin_percentage": "50%",
+        "margin_amount": "€10,500"
+      },
+      "features": [
+        "True plug-and-play operation",
+        "Integrated solar panel folding system",
+        "Bluetooth monitoring app",
+        "USB charging ports (USB-C, USB-A)",
+        "Built-in LED work lights",
+        "Emergency backup mode",
+        "Rainproof IP44 rated"
+      ],
+      "use_cases": [
+        "Small outdoor events",
+        "Food trucks and mobile vendors",
+        "Remote work sites",
+        "Emergency response vehicles",
+        "Outdoor markets and fairs",
+        "Small off-grid cabins"
+      ],
+      "fuel_savings": "70-85% diesel reduction",
+      "co2_reduction": "Up to 8 tonnes/year",
+      "rental_available": true,
+      "rental_price": "€350 - €500/week",
+      "installation_time": "30 minutes - 1 hour",
+      "maintenance_interval": "Every 18 months",
+      "related_docs": [
+        "Manual_PG-C01_v1.9.pdf",
+        "Quick_Start_Guide_Compact.pdf",
+        "Bluetooth_App_User_Manual.pdf"
+      ]
+    },
+    {
+      "product_id": "PG-M02",
+      "name": "GreenPower Mini",
+      "category": "Entry-Level Solar Generator",
+      "power_output": {
+        "continuous": "5 kVA",
+        "peak": "10 kW",
+        "phases": "Single-phase"
+      },
+      "specifications": {
+        "battery_capacity": "20 kWh",
+        "battery_type": "LiFePO4 compact cells",
+        "solar_panel_capacity": "2 kWp",
+        "inverter": "Victron Energy Phoenix 48/1200",
+        "dimensions": "0.8m x 0.6m x 0.7m (portable case)",
+        "weight": "85 kg",
+        "operating_temperature": "10°C to +35°C",
+        "noise_level": "< 20 dB at 1m (whisper-level)",
+        "mobility": "Hand-carried with handles"
+      },
+      "private_cost_breakdown": {
+        "private_battery_cost": "€2,400",
+        "private_solar_panels_cost": "€700",
+        "private_inverter_cost": "€800",
+        "private_portable_case": "€450",
+        "private_electronics_monitoring": "€600",
+        "private_installation_labor": "€350",
+        "private_rd_amortization": "€400",
+        "private_total_cost": "€5,700"
+      },
+      "pricing": {
+        "price_range": "€8,500 - €12,000",
+        "average_selling_price": "€10,250",
+        "margin_percentage": "79.8%",
+        "margin_amount": "€4,550"
+      },
+      "features": [
+        "Ultra-portable design",
+        "Rapid solar deployment (5 minutes)",
+        "Mobile app with cloud sync",
+        "Multiple AC/DC outputs",
+        "Car cigarette lighter charging",
+        "Emergency SOS beacon",
+        "Lightweight aluminum chassis"
+      ],
+      "use_cases": [
+        "Small vendor stalls",
+        "Outdoor workshops",
+        "Emergency home backup",
+        "RV and camper power",
+        "Remote scientific equipment",
+        "Disaster relief operations"
+      ],
+      "fuel_savings": "60-75% diesel reduction for small generators",
+      "co2_reduction": "Up to 2 tonnes/year",
+      "rental_available": true,
+      "rental_price": "€150 - €250/week",
+      "installation_time": "5-15 minutes",
+      "maintenance_interval": "Every 24 months",
+      "related_docs": [
+        "Manual_PG-M02_v1.5.pdf",
+        "Portable_Solar_Setup_Guide.pdf",
+        "Emergency_Use_Instructions.pdf"
+      ]
+    }
+  ],
+  "accessories": [
+    {
+      "accessory_id": "PG-ACC-01",
+      "name": "Extended Solar Panel Array",
+      "description": "Additional solar panels to increase charging capacity",
+      "compatible_with": ["PG-M01", "PG-P01", "PG-C01"],
+      "power_increase": "+25% to +50%",
+      "private_cost": "€1,800 - €4,500",
+      "price": "€3,000 - €8,000",
+      "margin_percentage": "40-55%"
+    },
+    {
+      "accessory_id": "PG-ACC-02",
+      "name": "Battery Expansion Module",
+      "description": "Add-on battery pack for extended runtime",
+      "compatible_with": ["PG-P01", "PG-C01"],
+      "capacity_increase": "+50% to +100%",
+      "private_cost": "€10,500 - €17,000",
+      "price": "€15,000 - €25,000",
+      "margin_percentage": "30-47%"
+    },
+    {
+      "accessory_id": "PG-ACC-03",
+      "name": "Hybrid Diesel Interface Kit",
+      "description": "Connect existing diesel generator for hybrid operation",
+      "compatible_with": ["PG-U01", "PG-M01", "PG-P01"],
+      "fuel_savings": "Increases savings to 95%+",
+      "private_cost": "€2,800 - €4,800",
+      "price": "€4,500 - €7,500",
+      "margin_percentage": "38-56%"
+    },
+    {
+      "accessory_id": "PG-ACC-04",
+      "name": "Remote Monitoring Premium License",
+      "description": "Advanced cloud monitoring with predictive analytics",
+      "compatible_with": ["All models"],
+      "features": ["24/7 monitoring", "Predictive maintenance", "Energy optimization AI"],
+      "private_cost_annual": "€180/year (cloud infrastructure + support)",
+      "price": "€500/year subscription",
+      "margin_percentage": "64%"
+    }
+  ],
+  "services": [
+    {
+      "service_id": "SVC-INSTALL",
+      "name": "Professional Installation",
+      "description": "Full turnkey installation by certified technicians",
+      "includes": ["Site assessment", "Equipment setup", "Testing & commissioning", "Training"],
+      "pricing_model": "10-15% of equipment cost",
+      "private_cost_breakdown": {
+        "technician_labor": "60% of service fee",
+        "travel_expenses": "15% of service fee",
+        "equipment_tools": "10% of service fee",
+        "documentation_training": "15% of service fee"
+      },
+      "margin_percentage": "25-35%"
+    },
+    {
+      "service_id": "SVC-MAINT",
+      "name": "Annual Maintenance Contract",
+      "description": "Comprehensive maintenance and support package",
+      "includes": ["Preventive maintenance", "Priority support", "Parts replacement", "Software updates"],
+      "price": "€2,000 - €15,000/year depending on model",
+      "private_cost_range": "€1,200 - €9,500/year",
+      "margin_percentage": "33-37%"
+    },
+    {
+      "service_id": "SVC-CONSULT",
+      "name": "Energy Audit & Consultation",
+      "description": "Expert analysis of energy needs and system design",
+      "includes": ["Load analysis", "System sizing", "ROI calculations", "Financing options"],
+      "price": "€500 - €2,000",
+      "private_cost": "€200 - €800 (consultant time + travel)",
+      "margin_percentage": "60%"
+    }
+  ]
+}
