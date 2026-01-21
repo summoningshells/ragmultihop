@@ -19,6 +19,7 @@ streamlit run app_hybrid.py  # Lancer l'application
 ![rag multihop](assets/multihop.png)
 - **Routeur Intelligent**: Classification automatique des questions
 ![rag multihop](assets/routeur.png)
+- **Dashboard Métriques**: Visualisation des performances Qdrant et Neo4j en temps réel
 
 ## 🏗️ Architecture
 
@@ -65,6 +66,7 @@ L'application s'ouvre sur http://localhost:8501
 ├── deploy.sh               # 🚀 Script de déploiement unifié
 ├── app_hybrid.py           # Interface Streamlit (application principale)
 ├── hybrid_rag.py           # Routeur intelligent
+├── dashboard.py            # Dashboard métriques et performance
 ├── neo4j_loader.py         # Parse JSONs → Graphe Neo4j
 ├── neo4j_query.py          # Requêtes Cypher multi-hop
 ├── init_system.py          # Script d'initialisation

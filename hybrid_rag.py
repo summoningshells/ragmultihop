@@ -214,3 +214,25 @@ La recherche vectorielle suffit pour trouver la réponse.
             "strategy": strategy,
             "explanation": explanation.strip()
         }
+
+
+class QueryExamples:
+    """Exemples de questions pour tester le système"""
+
+    SIMPLE_QUESTIONS = [
+        "Qu'est-ce que le produit GreenPower Max?",
+        "Quelles sont les caractéristiques du PG-U01?",
+        "Quel est le prix du GreenPower Compact?",
+        "Comment fonctionne un générateur solaire autonome?",
+        "Quelle est la capacité de la batterie du PG-M01?",
+        "Quels sont les avantages de la location?",
+    ]
+
+    MULTI_HOP_QUESTIONS = [
+        "Quels événements ont utilisé des produits vendus à Pollutec Paris?",
+        "Quel est le CO2 total économisé par le produit PG-M01?",
+        "Quels salons ont généré le plus de revenus avec les collectivités?",
+        "Quels projets R&D visent les produits utilisés aux festivals?",
+        "Quels produits avec batteries LiFePO4 ont été vendus?",
+        "Dans quels salons le PG-U01 a-t-il été vendu?",
+    ]

@@ -21,15 +21,16 @@ Permettre de poser des questions en langage naturel sur :
 ### 🏗️ Architecture Globale
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    INTERFACE UTILISATEUR                     │
-│                   (app_hybrid.py - Streamlit)                │
-│                                                               │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐      │
-│  │  RAG Simple  │  │ RAG Hybride  │  │   Routeur    │      │
-│  │   (Qdrant)   │  │ Qdrant+Neo4j │  │  Intelligent │      │
-│  └──────────────┘  └──────────────┘  └──────────────┘      │
-└─────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────────┐
+│                      INTERFACE UTILISATEUR                            │
+│                     (app_hybrid.py - Streamlit)                       │
+│                                                                        │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────────┐        │
+│  │   RAG    │  │   RAG    │  │ Routeur  │  │  Dashboard   │        │
+│  │  Simple  │  │ Hybride  │  │  Intel.  │  │  Métriques   │        │
+│  │ (Qdrant) │  │  Q+Neo4j │  │  (Auto)  │  │ (dashboard.py)│        │
+│  └──────────┘  └──────────┘  └──────────┘  └──────────────┘        │
+└──────────────────────────────────────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────┐
@@ -324,6 +325,109 @@ Permettre de poser des questions en langage naturel sur :
 3. Test connexion Qdrant
 4. Chargement des données Neo4j (si nécessaire)
 5. Affichage du résumé
+
+---
+
+### 6. **dashboard.py** - Dashboard de Métriques et Performance
+
+**Rôle principal**: Collecter et afficher les métriques de performance en temps réel de Qdrant et Neo4j avec des visualisations graphiques.
+
+#### Classe `DashboardMetrics`
+
+**Fonctionnalités principales**:
+
+- **`get_qdrant_metrics()`**
+  - Récupère les statistiques de la base vectorielle Qdrant
+  - Retourne: nombre de collections, documents indexés, vecteurs, dimension vectorielle
+  - Détecte si la collection principale existe
+  - Gestion d'erreur avec affichage des messages
+
+- **`get_neo4j_metrics()`**
+  - Récupère les statistiques du graphe Neo4j
+  - Compte les nœuds par type (Product, Event, TradeShow, Sale, RDProject, BatteryType)
+  - Compte les relations par type (DEPLOYED_AT, SOLD_AT, USES_BATTERY, etc.)
+  - Retourne: total des nœuds, total des relations, distributions par type
+  - Requêtes Cypher optimisées avec agrégations
+
+- **`measure_qdrant_search_time(question, k=3)`**
+  - Mesure le temps de recherche vectorielle Qdrant
+  - Paramètres: question de test, nombre de résultats (k)
+  - Retourne: temps en millisecondes, nombre de résultats trouvés
+  - Utile pour benchmarking et optimisation
+
+- **`measure_neo4j_query_time(query_func, *args)`**
+  - Mesure le temps d'exécution d'une requête Neo4j
+  - Accepte n'importe quelle fonction de requête Neo4j
+  - Retourne: temps en millisecondes, nombre de résultats
+  - Permet de comparer les performances de différentes requêtes
+
+#### Fonction `render_dashboard(qdrant_client, neo4j_querier, vector_store)`
+
+**Interface utilisateur du dashboard** (intégrée comme onglet dans app_hybrid.py):
+
+**Section 1 - Métriques Qdrant** :
+- Affichage des métriques en temps réel :
+  - Nombre de collections
+  - Documents indexés
+  - Vecteurs stockés
+  - Dimension vectorielle
+- **Test de performance de recherche** :
+  - Bouton "Lancer test Qdrant"
+  - Teste 3 questions types
+  - Affiche tableau des temps de réponse
+  - Graphique en barres des temps par question
+  - Calcul et affichage du temps moyen
+
+**Section 2 - Métriques Neo4j** :
+- Affichage des métriques du graphe :
+  - Total de nœuds
+  - Total de relations
+- **Graphiques de distribution** :
+  - Graphique 1 : Distribution des nœuds par type (bar chart)
+  - Graphique 2 : Distribution des relations par type (bar chart)
+- **Test de performance des requêtes** :
+  - Bouton "Lancer test Neo4j"
+  - Teste 4 types de requêtes :
+    1. Requête simple (top salons)
+    2. Requête multi-hop (événements avec produits vendus)
+    3. Agrégation (ventes par type client)
+    4. Multi-hop complexe (R&D festivals, 3 sauts)
+  - Affiche tableau comparatif
+  - Graphique en barres des temps par requête
+  - Calcul du temps moyen
+
+**Section 3 - Comparaison RAG Simple vs Hybride** :
+- Input pour question de test personnalisée
+- Bouton "Comparer"
+- **Comparaison côte à côte** :
+  - RAG Simple (Qdrant uniquement) : temps, nombre de sources
+  - RAG Hybride (Qdrant + Neo4j) : temps, nombre de sources combinées
+- Graphique comparatif des temps
+- Analyse du différentiel de performance en pourcentage
+- Recommandations basées sur les résultats
+
+**Section 4 - État du Système** :
+- Indicateurs de statut :
+  - 🟢 Qdrant : Opérationnel / 🔴 Erreur
+  - 🟢 Neo4j : Opérationnel / 🔴 Erreur
+  - 🟢 Global : Système OK / 🔴 Problème détecté
+- Timestamp de dernière mise à jour
+- **Auto-refresh** : Option pour rafraîchir automatiquement toutes les 5 secondes
+
+**Caractéristiques techniques** :
+- Utilise uniquement Streamlit natif (pas de bibliothèques externes lourdes)
+- Graphiques avec `st.bar_chart()` et `st.metric()`
+- Dataframes pandas pour tableaux de données
+- Gestion d'erreurs robuste avec messages utilisateur
+- Performance mesurée en millisecondes (précision 2 décimales)
+- Design responsive avec colonnes Streamlit
+
+**Cas d'usage** :
+1. **Monitoring** : Surveiller l'état du système en temps réel
+2. **Debugging** : Identifier les requêtes lentes
+3. **Optimisation** : Comparer les performances des stratégies RAG
+4. **Démo** : Montrer les capacités du système aux stakeholders
+5. **Benchmarking** : Mesurer l'impact des changements d'infrastructure
 
 ---
 

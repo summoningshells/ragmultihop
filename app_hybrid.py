@@ -16,6 +16,7 @@ from qdrant_client import QdrantClient
 
 from pypdf import PdfReader
 from hybrid_rag import HybridRAG, QueryExamples
+from dashboard import render_dashboard
 
 # Configuration
 load_dotenv()
@@ -217,11 +218,12 @@ def main():
 
     st.success(f"{num_chunks} chunks indexés dans Qdrant")
 
-    # Tabs pour les deux modes
-    tab1, tab2, tab3 = st.tabs([
+    # Tabs pour les modes RAG et le dashboard
+    tab1, tab2, tab3, tab4 = st.tabs([
         "🤖 RAG Classique (Qdrant)",
         "🔗 RAG+Graph Multi-Hop",
-        "🧭 Routeur Intelligent (Auto)"
+        "🧭 Routeur Intelligent (Auto)",
+        "📊 Dashboard Métriques"
     ])
 
     # TAB 1: RAG Classique
@@ -337,6 +339,10 @@ def main():
                         st.markdown(f"**Source {i}:** {doc.metadata.get('source', 'N/A')}")
                         st.text(doc.page_content[:300] + "...")
                         st.divider()
+
+    # TAB 4: Dashboard Métriques
+    with tab4:
+        render_dashboard(qdrant_client, hybrid_rag.neo4j_querier, vector_store)
 
 if __name__ == "__main__":
     main()
