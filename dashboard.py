@@ -124,27 +124,40 @@ class DashboardMetrics:
 def render_dashboard(qdrant_client, neo4j_querier, vector_store):
     """Affiche le dashboard complet des métriques"""
 
-    st.header("📊 Dashboard de Performance")
-    st.markdown("Métriques en temps réel du système RAG Hybride")
+    st.markdown("### 📊 Dashboard de Performance")
+    st.markdown("""
+        <div style='background: rgba(16, 185, 129, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #10b981; margin-bottom: 1.5rem;'>
+            📈 Métriques en temps réel du système RAG Hybride - Surveillance Qdrant et Neo4j
+        </div>
+    """, unsafe_allow_html=True)
 
     # Initialiser le dashboard
     dashboard = DashboardMetrics(qdrant_client, neo4j_querier, vector_store)
 
-    # Bouton de refresh
+    # Bouton de refresh avec meilleur style
     col1, col2, col3 = st.columns([1, 1, 4])
     with col1:
-        if st.button("🔄 Rafraîchir"):
+        if st.button("🔄 Rafraîchir", use_container_width=True):
             st.rerun()
     with col2:
         auto_refresh = st.checkbox("Auto-refresh", value=False)
 
     if auto_refresh:
-        st.info("⏱️ Rafraîchissement automatique activé")
+        st.markdown("""
+            <div style='background: rgba(59, 130, 246, 0.15); padding: 0.75rem; border-radius: 8px; border-left: 3px solid #3b82f6; margin: 0.5rem 0;'>
+                ⏱️ <strong>Rafraîchissement automatique activé</strong> (toutes les 5 secondes)
+            </div>
+        """, unsafe_allow_html=True)
 
-    st.divider()
+    st.markdown("---")
 
     # Section 1: Métriques Qdrant
-    st.subheader("🔵 Qdrant - Base Vectorielle")
+    st.markdown("### 🔵 Qdrant - Base Vectorielle")
+    st.markdown("""
+        <div style='background: rgba(59, 130, 246, 0.1); padding: 0.75rem; border-radius: 8px; margin-bottom: 1rem;'>
+            Statistiques de la base de données vectorielle
+        </div>
+    """, unsafe_allow_html=True)
 
     qdrant_metrics = dashboard.get_qdrant_metrics()
 
@@ -153,30 +166,39 @@ def render_dashboard(qdrant_client, neo4j_querier, vector_store):
 
         with col1:
             st.metric(
-                label="Collections",
-                value=qdrant_metrics.get("total_collections", 0)
+                label="📚 Collections",
+                value=qdrant_metrics.get("total_collections", 0),
+                delta=None,
+                help="Nombre total de collections Qdrant"
             )
 
         with col2:
             st.metric(
-                label="Documents indexés",
-                value=qdrant_metrics.get("documents_count", 0)
+                label="📄 Documents indexés",
+                value=qdrant_metrics.get("documents_count", 0),
+                delta=None,
+                help="Nombre de documents dans la collection"
             )
 
         with col3:
             st.metric(
-                label="Vecteurs",
-                value=qdrant_metrics.get("vectors_count", 0)
+                label="🎯 Vecteurs",
+                value=qdrant_metrics.get("vectors_count", 0),
+                delta=None,
+                help="Nombre total de vecteurs stockés"
             )
 
         with col4:
             st.metric(
-                label="Dimension vectorielle",
-                value=qdrant_metrics.get("vector_size", 0)
+                label="📐 Dimension",
+                value=qdrant_metrics.get("vector_size", 0),
+                delta=None,
+                help="Dimension des vecteurs d'embedding"
             )
 
         # Test de performance Qdrant
-        st.markdown("**Test de performance de recherche**")
+        st.markdown("")
+        st.markdown("#### 🚀 Test de performance de recherche")
 
         test_questions = [
             "Qu'est-ce que GreenPower?",
@@ -184,8 +206,8 @@ def render_dashboard(qdrant_client, neo4j_querier, vector_store):
             "Événements festivals"
         ]
 
-        if st.button("▶️ Lancer test Qdrant", key="test_qdrant"):
-            with st.spinner("Test en cours..."):
+        if st.button("▶️ Lancer test Qdrant", key="test_qdrant", use_container_width=False):
+            with st.spinner("⏳ Test en cours..."):
                 perf_data = []
 
                 for question in test_questions:
@@ -198,20 +220,31 @@ def render_dashboard(qdrant_client, neo4j_querier, vector_store):
 
                 df = pd.DataFrame(perf_data)
 
-                # Afficher le tableau
+                # Afficher le tableau avec style
+                st.markdown("**📋 Résultats des tests:**")
                 st.dataframe(df, use_container_width=True)
 
                 # Graphique des temps
+                st.markdown("**📊 Temps de réponse par question:**")
                 st.bar_chart(df.set_index("Question")["Temps (ms)"])
 
                 # Moyenne
                 avg_time = df["Temps (ms)"].mean()
-                st.success(f"⏱️ Temps moyen de recherche: **{avg_time:.2f} ms**")
+                st.markdown(f"""
+                    <div style='background: rgba(16, 185, 129, 0.15); padding: 1rem; border-radius: 8px; border-left: 4px solid #10b981; margin: 1rem 0;'>
+                        ⏱️ <strong>Temps moyen de recherche:</strong> <span style='font-size: 1.2rem; color: #10b981;'>{avg_time:.2f} ms</span>
+                    </div>
+                """, unsafe_allow_html=True)
 
-    st.divider()
+    st.markdown("---")
 
     # Section 2: Métriques Neo4j
-    st.subheader("🟢 Neo4j - Graphe de Connaissances")
+    st.markdown("### 🟢 Neo4j - Graphe de Connaissances")
+    st.markdown("""
+        <div style='background: rgba(16, 185, 129, 0.1); padding: 0.75rem; border-radius: 8px; margin-bottom: 1rem;'>
+            Statistiques de la base de données graphique
+        </div>
+    """, unsafe_allow_html=True)
 
     neo4j_metrics = dashboard.get_neo4j_metrics()
 
@@ -220,44 +253,55 @@ def render_dashboard(qdrant_client, neo4j_querier, vector_store):
 
         with col1:
             st.metric(
-                label="Nœuds totaux",
-                value=neo4j_metrics.get("total_nodes", 0)
+                label="🔘 Nœuds totaux",
+                value=neo4j_metrics.get("total_nodes", 0),
+                delta=None,
+                help="Nombre total de nœuds dans le graphe"
             )
 
         with col2:
             st.metric(
-                label="Relations totales",
-                value=neo4j_metrics.get("total_relations", 0)
+                label="🔗 Relations totales",
+                value=neo4j_metrics.get("total_relations", 0),
+                delta=None,
+                help="Nombre total de relations entre nœuds"
             )
 
         # Graphiques de distribution
+        st.markdown("")
+        st.markdown("#### 📊 Distribution des données")
         col1, col2 = st.columns(2)
 
         with col1:
-            st.markdown("**Distribution des nœuds par type**")
+            st.markdown("**🔘 Nœuds par type**")
             nodes_data = neo4j_metrics.get("nodes_by_type", {})
             if nodes_data:
                 df_nodes = pd.DataFrame({
                     "Type": list(nodes_data.keys()),
                     "Nombre": list(nodes_data.values())
                 })
-                st.bar_chart(df_nodes.set_index("Type"))
+                st.bar_chart(df_nodes.set_index("Type"), height=300)
+            else:
+                st.info("Aucun nœud trouvé")
 
         with col2:
-            st.markdown("**Distribution des relations par type**")
+            st.markdown("**🔗 Relations par type**")
             relations_data = neo4j_metrics.get("relations_by_type", {})
             if relations_data:
                 df_relations = pd.DataFrame({
                     "Type": list(relations_data.keys()),
                     "Nombre": list(relations_data.values())
                 })
-                st.bar_chart(df_relations.set_index("Type"))
+                st.bar_chart(df_relations.set_index("Type"), height=300)
+            else:
+                st.info("Aucune relation trouvée")
 
         # Test de performance Neo4j
-        st.markdown("**Test de performance des requêtes**")
+        st.markdown("")
+        st.markdown("#### 🚀 Test de performance des requêtes")
 
-        if st.button("▶️ Lancer test Neo4j", key="test_neo4j"):
-            with st.spinner("Test en cours..."):
+        if st.button("▶️ Lancer test Neo4j", key="test_neo4j", use_container_width=False):
+            with st.spinner("⏳ Test en cours..."):
                 perf_data = []
 
                 # Test 1: Requête simple
@@ -302,37 +346,95 @@ def render_dashboard(qdrant_client, neo4j_querier, vector_store):
 
                 df = pd.DataFrame(perf_data)
 
-                # Afficher le tableau
+                # Afficher le tableau avec style
+                st.markdown("**📋 Résultats des tests:**")
                 st.dataframe(df, use_container_width=True)
 
                 # Graphique des temps
-                st.bar_chart(df.set_index("Requête")["Temps (ms)"])
+                st.markdown("**📊 Temps d'exécution par type de requête:**")
+                st.bar_chart(df.set_index("Requête")["Temps (ms)"], height=300)
 
                 # Moyenne
                 avg_time = df["Temps (ms)"].mean()
-                st.success(f"⏱️ Temps moyen de requête: **{avg_time:.2f} ms**")
+                st.markdown(f"""
+                    <div style='background: rgba(16, 185, 129, 0.15); padding: 1rem; border-radius: 8px; border-left: 4px solid #10b981; margin: 1rem 0;'>
+                        ⏱️ <strong>Temps moyen de requête:</strong> <span style='font-size: 1.2rem; color: #10b981;'>{avg_time:.2f} ms</span>
+                    </div>
+                """, unsafe_allow_html=True)
 
-    st.divider()
+    st.markdown("---")
 
     # Section 3: État du système
-    st.subheader("🔧 État du Système")
+    st.markdown("### 🔧 État du Système")
+    st.markdown("""
+        <div style='background: rgba(100, 116, 139, 0.1); padding: 0.75rem; border-radius: 8px; margin-bottom: 1rem;'>
+            Statut opérationnel des composants
+        </div>
+    """, unsafe_allow_html=True)
 
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        qdrant_status = "🟢 Opérationnel" if "error" not in qdrant_metrics else "🔴 Erreur"
-        st.markdown(f"**Qdrant:** {qdrant_status}")
+        if "error" not in qdrant_metrics:
+            st.markdown("""
+                <div style='background: rgba(16, 185, 129, 0.15); padding: 1rem; border-radius: 8px; text-align: center; border: 2px solid #10b981;'>
+                    <div style='font-size: 2rem;'>🟢</div>
+                    <strong>Qdrant</strong><br>
+                    <span style='color: #10b981; font-weight: 600;'>Opérationnel</span>
+                </div>
+            """, unsafe_allow_html=True)
+        else:
+            st.markdown("""
+                <div style='background: rgba(239, 68, 68, 0.15); padding: 1rem; border-radius: 8px; text-align: center; border: 2px solid #ef4444;'>
+                    <div style='font-size: 2rem;'>🔴</div>
+                    <strong>Qdrant</strong><br>
+                    <span style='color: #ef4444; font-weight: 600;'>Erreur</span>
+                </div>
+            """, unsafe_allow_html=True)
 
     with col2:
-        neo4j_status = "🟢 Opérationnel" if "error" not in neo4j_metrics else "🔴 Erreur"
-        st.markdown(f"**Neo4j:** {neo4j_status}")
+        if "error" not in neo4j_metrics:
+            st.markdown("""
+                <div style='background: rgba(16, 185, 129, 0.15); padding: 1rem; border-radius: 8px; text-align: center; border: 2px solid #10b981;'>
+                    <div style='font-size: 2rem;'>🟢</div>
+                    <strong>Neo4j</strong><br>
+                    <span style='color: #10b981; font-weight: 600;'>Opérationnel</span>
+                </div>
+            """, unsafe_allow_html=True)
+        else:
+            st.markdown("""
+                <div style='background: rgba(239, 68, 68, 0.15); padding: 1rem; border-radius: 8px; text-align: center; border: 2px solid #ef4444;'>
+                    <div style='font-size: 2rem;'>🔴</div>
+                    <strong>Neo4j</strong><br>
+                    <span style='color: #ef4444; font-weight: 600;'>Erreur</span>
+                </div>
+            """, unsafe_allow_html=True)
 
     with col3:
-        overall_status = "🟢 Système OK" if ("error" not in qdrant_metrics and "error" not in neo4j_metrics) else "🔴 Problème détecté"
-        st.markdown(f"**Global:** {overall_status}")
+        if "error" not in qdrant_metrics and "error" not in neo4j_metrics:
+            st.markdown("""
+                <div style='background: rgba(16, 185, 129, 0.15); padding: 1rem; border-radius: 8px; text-align: center; border: 2px solid #10b981;'>
+                    <div style='font-size: 2rem;'>✅</div>
+                    <strong>Système Global</strong><br>
+                    <span style='color: #10b981; font-weight: 600;'>Tout fonctionne</span>
+                </div>
+            """, unsafe_allow_html=True)
+        else:
+            st.markdown("""
+                <div style='background: rgba(239, 68, 68, 0.15); padding: 1rem; border-radius: 8px; text-align: center; border: 2px solid #ef4444;'>
+                    <div style='font-size: 2rem;'>⚠️</div>
+                    <strong>Système Global</strong><br>
+                    <span style='color: #ef4444; font-weight: 600;'>Problème détecté</span>
+                </div>
+            """, unsafe_allow_html=True)
 
-    # Timestamp
-    st.caption(f"Dernière mise à jour: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    # Timestamp avec style
+    st.markdown("")
+    st.markdown(f"""
+        <div style='background: rgba(100, 116, 139, 0.1); padding: 0.75rem; border-radius: 8px; text-align: center; margin-top: 1rem;'>
+            🕒 <strong>Dernière mise à jour:</strong> {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+        </div>
+    """, unsafe_allow_html=True)
 
     # Auto-refresh
     if auto_refresh:

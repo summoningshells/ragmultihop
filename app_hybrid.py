@@ -151,72 +151,279 @@ def load_and_index_documents(_qdrant_client, _embeddings):
 
 # Interface Streamlit
 def main():
-    st.set_page_config(page_title="RAG Hybride GreenPower", layout="wide")
+    st.set_page_config(
+        page_title="RAG Hybride GreenPower",
+        layout="wide",
+        page_icon="🌿",
+        initial_sidebar_state="expanded"
+    )
 
-    st.title("RAG Hybride - GreenPower Solutions")
-    st.markdown("Système RAG avec Neo4j pour multi-hop reasoning")
+    # CSS personnalisé pour améliorer l'UI
+    st.markdown("""
+        <style>
+        /* Amélioration des titres */
+        h1 {
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(120deg, #10b981, #059669);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            padding-bottom: 1rem;
+        }
+
+        h2 {
+            font-weight: 600;
+            padding-top: 1rem;
+            border-bottom: 2px solid #10b981;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-weight: 600;
+            color: #10b981;
+            margin-top: 1.5rem;
+        }
+
+        /* Amélioration des cartes métriques */
+        [data-testid="stMetricValue"] {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #10b981;
+        }
+
+        [data-testid="stMetricLabel"] {
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Amélioration des expanders */
+        .streamlit-expanderHeader {
+            font-weight: 600;
+            background-color: rgba(16, 185, 129, 0.1);
+            border-radius: 8px;
+            padding: 0.5rem;
+        }
+
+        /* Amélioration des inputs */
+        .stTextInput input {
+            border-radius: 8px;
+            border: 2px solid #10b981;
+            padding: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .stTextInput input:focus {
+            border-color: #059669;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+        }
+
+        /* Amélioration des boutons */
+        .stButton button {
+            border-radius: 8px;
+            font-weight: 600;
+            padding: 0.5rem 1.5rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .stButton button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+
+        /* Amélioration des tabs */
+        .stTabs [data-baseweb="tab-list"] {
+            gap: 8px;
+            background-color: rgba(16, 185, 129, 0.05);
+            padding: 0.5rem;
+            border-radius: 8px;
+        }
+
+        .stTabs [data-baseweb="tab"] {
+            height: 50px;
+            background-color: transparent;
+            border-radius: 8px;
+            font-weight: 600;
+            padding: 0 1.5rem;
+        }
+
+        .stTabs [aria-selected="true"] {
+            background-color: #10b981;
+        }
+
+        /* Amélioration des messages info/success */
+        .stAlert {
+            border-radius: 8px;
+            border-left: 4px solid #10b981;
+            padding: 1rem;
+        }
+
+        /* Amélioration du spinner */
+        .stSpinner > div {
+            border-top-color: #10b981;
+        }
+
+        /* Amélioration de la sidebar */
+        [data-testid="stSidebar"] {
+            background: linear-gradient(180deg, rgba(16, 185, 129, 0.05) 0%, transparent 100%);
+        }
+
+        /* Amélioration des dividers */
+        hr {
+            margin: 2rem 0;
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #10b981, transparent);
+        }
+
+        /* Amélioration des dataframes */
+        .dataframe {
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* Animation de fade-in pour le contenu */
+        .element-container {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Style des badges personnalisés */
+        .badge {
+            display: inline-block;
+            padding: 0.35rem 0.65rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            line-height: 1;
+            border-radius: 6px;
+            margin: 0.25rem;
+        }
+
+        .badge-success {
+            background-color: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            border: 1px solid #10b981;
+        }
+
+        .badge-info {
+            background-color: rgba(59, 130, 246, 0.2);
+            color: #3b82f6;
+            border: 1px solid #3b82f6;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+
+    # En-tête avec style amélioré
+    st.title("🌿 RAG Hybride - GreenPower Solutions")
+    st.markdown("""
+        <p style='font-size: 1.2rem; color: #64748b; margin-bottom: 2rem;'>
+            Système RAG intelligent combinant recherche vectorielle et raisonnement graphique
+        </p>
+    """, unsafe_allow_html=True)
 
     # Initialisation
     qdrant_client, embeddings, llm, hybrid_rag = init_components()
 
-    # Sidebar
+    # Sidebar améliorée
     with st.sidebar:
-        st.header("Configuration")
-        st.info("Documents chargés depuis 'data/'")
+        st.markdown("## ⚙️ Configuration")
+        st.markdown("""
+            <div style='background: rgba(16, 185, 129, 0.1); padding: 0.75rem; border-radius: 8px; margin-bottom: 1rem;'>
+                📂 Documents chargés depuis <code>data/</code>
+            </div>
+        """, unsafe_allow_html=True)
 
+        st.markdown("### 🔧 Actions système")
         col1, col2 = st.columns(2)
         with col1:
-            if st.button("🔄 Recharger"):
+            if st.button("🔄 Recharger", use_container_width=True, help="Recharge tous les composants"):
                 st.cache_resource.clear()
                 st.rerun()
 
         with col2:
-            if st.button("🗑️ Réinitialiser"):
+            if st.button("🗑️ Reset", use_container_width=True, help="Réinitialise la collection Qdrant"):
                 # Supprimer la collection Qdrant
                 try:
                     qdrant_client.delete_collection(COLLECTION_NAME)
                     st.cache_resource.clear()
-                    st.success("Collection supprimée")
+                    st.success("✅ Collection supprimée")
                     st.rerun()
                 except Exception as e:
-                    st.warning(f"Erreur: {e}")
+                    st.warning(f"⚠️ Erreur: {e}")
 
         st.divider()
 
-        st.subheader("État du graphe Neo4j")
-        if st.button("📊 Charger Neo4j"):
-            with st.spinner("Chargement du graphe..."):
+        st.markdown("### 🔗 Graphe Neo4j")
+        if st.button("📊 Charger Neo4j", use_container_width=True, help="Charge les données dans Neo4j"):
+            with st.spinner("⏳ Chargement du graphe..."):
                 from neo4j_loader import Neo4jLoader
                 loader = Neo4jLoader()
                 try:
                     loader.load_all()
-                    st.success("Graphe Neo4j chargé!")
+                    st.success("✅ Graphe chargé!")
                 except Exception as e:
-                    st.error(f"Erreur: {e}")
+                    st.error(f"❌ Erreur: {e}")
                 finally:
                     loader.close()
 
         st.divider()
 
-        st.subheader("Exemples de questions")
-        st.markdown("**Questions simples (RAG classique):**")
-        for q in QueryExamples.SIMPLE_QUESTIONS[:3]:
-            st.caption(f"• {q}")
+        st.markdown("### 💡 Exemples de questions")
 
-        st.markdown("**Questions multi-hop (RAG+Graph):**")
-        for q in QueryExamples.MULTI_HOP_QUESTIONS[:4]:
-            st.caption(f"• {q}")
+        with st.expander("📄 Questions simples", expanded=False):
+            st.markdown("*Pour RAG classique (Qdrant)*")
+            for i, q in enumerate(QueryExamples.SIMPLE_QUESTIONS[:3], 1):
+                st.markdown(f"""
+                    <div style='background: rgba(59, 130, 246, 0.1); padding: 0.5rem; border-radius: 6px; margin: 0.3rem 0; font-size: 0.85rem;'>
+                        <strong>{i}.</strong> {q}
+                    </div>
+                """, unsafe_allow_html=True)
+
+        with st.expander("🔗 Questions multi-hop", expanded=False):
+            st.markdown("*Pour RAG+Graph (Qdrant+Neo4j)*")
+            for i, q in enumerate(QueryExamples.MULTI_HOP_QUESTIONS[:4], 1):
+                st.markdown(f"""
+                    <div style='background: rgba(16, 185, 129, 0.1); padding: 0.5rem; border-radius: 6px; margin: 0.3rem 0; font-size: 0.85rem;'>
+                        <strong>{i}.</strong> {q}
+                    </div>
+                """, unsafe_allow_html=True)
+
+        st.divider()
+
+        # Footer avec info
+        st.markdown("""
+            <div style='background: rgba(100, 116, 139, 0.1); padding: 0.75rem; border-radius: 8px; text-align: center; font-size: 0.85rem; margin-top: 1rem;'>
+                🌿 <strong>GreenPower Solutions</strong><br>
+                Système RAG Hybride v1.0
+            </div>
+        """, unsafe_allow_html=True)
 
     # Chargement et indexation
-    with st.spinner("Chargement et indexation des documents..."):
+    with st.spinner("⏳ Chargement et indexation des documents..."):
         vector_store, num_chunks = load_and_index_documents(qdrant_client, embeddings)
 
     if vector_store is None:
-        st.warning("Aucun document trouvé dans le dossier 'data/'.")
-        st.info("Formats supportés: .txt, .json, .csv, .pdf")
+        st.markdown("""
+            <div style='background: rgba(251, 191, 36, 0.2); padding: 1rem; border-radius: 8px; border-left: 4px solid #fbbf24; margin: 1rem 0;'>
+                ⚠️ <strong>Aucun document trouvé</strong><br>
+                Veuillez ajouter des documents dans le dossier <code>data/</code>
+            </div>
+        """, unsafe_allow_html=True)
+        st.info("📝 Formats supportés: .txt, .json, .csv, .pdf")
         return
 
-    st.success(f"{num_chunks} chunks indexés dans Qdrant")
+    st.markdown(f"""
+        <div style='background: rgba(16, 185, 129, 0.15); padding: 1rem; border-radius: 8px; border-left: 4px solid #10b981; margin: 1rem 0;'>
+            ✅ <strong>{num_chunks} chunks</strong> indexés avec succès dans Qdrant
+        </div>
+    """, unsafe_allow_html=True)
 
     # Tabs pour les modes RAG et le dashboard
     tab1, tab2, tab3, tab4 = st.tabs([
@@ -228,117 +435,190 @@ def main():
 
     # TAB 1: RAG Classique
     with tab1:
-        st.header("RAG Classique - Recherche Vectorielle")
-        st.info("Utilise uniquement Qdrant pour la similarité sémantique. Idéal pour questions descriptives.")
+        st.markdown("### 📄 RAG Classique - Recherche Vectorielle")
+        st.markdown("""
+            <div style='background: rgba(59, 130, 246, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #3b82f6; margin-bottom: 1.5rem;'>
+                <strong>💡 Mode:</strong> Recherche par similarité sémantique dans Qdrant<br>
+                <strong>🎯 Idéal pour:</strong> Questions descriptives simples sur les produits, événements ou spécifications
+            </div>
+        """, unsafe_allow_html=True)
 
         question_classic = st.text_input(
-            "Votre question:",
+            "💬 Posez votre question:",
             placeholder="Ex: Qu'est-ce que le produit GreenPower Max?",
-            key="classic"
+            key="classic",
+            help="Entrez une question descriptive sur les produits ou événements"
         )
 
         if question_classic:
-            with st.spinner("Recherche de la réponse..."):
+            with st.spinner("🔍 Recherche de la réponse..."):
                 result = hybrid_rag.query_simple(question_classic, vector_store)
 
-            st.markdown("### Réponse")
-            st.write(result["answer"])
+            st.markdown("---")
+            st.markdown("### ✨ Réponse")
+            st.markdown(f"""
+                <div style='background: rgba(16, 185, 129, 0.05); padding: 1.5rem; border-radius: 8px; margin: 1rem 0; font-size: 1.05rem; line-height: 1.6;'>
+                    {result["answer"]}
+                </div>
+            """, unsafe_allow_html=True)
 
-            with st.expander("Sources utilisées (Qdrant)"):
+            with st.expander("📚 Sources utilisées (Qdrant)", expanded=False):
+                st.caption(f"**{len(result['sources']['vector_docs'])}** documents pertinents trouvés")
                 for i, doc in enumerate(result["sources"]["vector_docs"], 1):
-                    st.markdown(f"**Source {i}:** {doc.metadata.get('source', 'N/A')}")
+                    st.markdown(f"""
+                        <div style='background: rgba(100, 116, 139, 0.1); padding: 1rem; border-radius: 8px; margin: 0.5rem 0;'>
+                            <strong>📄 Source {i}:</strong> <code>{doc.metadata.get('source', 'N/A')}</code>
+                        </div>
+                    """, unsafe_allow_html=True)
                     st.text(doc.page_content[:300] + "...")
-                    st.divider()
+                    if i < len(result["sources"]["vector_docs"]):
+                        st.divider()
 
     # TAB 2: RAG+Graph
     with tab2:
-        st.header("RAG+Graph Multi-Hop - Raisonnement Relationnel")
-        st.info("Combine Qdrant (documents) + Neo4j (relations). Idéal pour questions avec agrégations/relations.")
+        st.markdown("### 🔗 RAG+Graph Multi-Hop - Raisonnement Relationnel")
+        st.markdown("""
+            <div style='background: rgba(16, 185, 129, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #10b981; margin-bottom: 1.5rem;'>
+                <strong>💡 Mode:</strong> Combine Qdrant (documents) + Neo4j (relations graphiques)<br>
+                <strong>🎯 Idéal pour:</strong> Questions complexes nécessitant des agrégations, relations multi-étapes ou raisonnement sur le graphe
+            </div>
+        """, unsafe_allow_html=True)
 
         question_graph = st.text_input(
-            "Votre question:",
+            "💬 Posez votre question:",
             placeholder="Ex: Quels événements ont utilisé des produits vendus à Pollutec Paris?",
-            key="graph"
+            key="graph",
+            help="Entrez une question complexe avec des relations entre entités"
         )
 
         if question_graph:
-            with st.spinner("Recherche multi-hop..."):
+            with st.spinner("🔄 Recherche multi-hop en cours..."):
                 result = hybrid_rag.query_hybrid(question_graph, vector_store)
 
-            st.markdown("### Réponse")
-            st.write(result["answer"])
+            st.markdown("---")
+            st.markdown("### ✨ Réponse")
+            st.markdown(f"""
+                <div style='background: rgba(16, 185, 129, 0.05); padding: 1.5rem; border-radius: 8px; margin: 1rem 0; font-size: 1.05rem; line-height: 1.6;'>
+                    {result["answer"]}
+                </div>
+            """, unsafe_allow_html=True)
 
+            st.markdown("### 📊 Sources de données")
             col1, col2 = st.columns(2)
 
             with col1:
-                with st.expander("📄 Sources Qdrant (Documents)"):
+                with st.expander("📄 Documents Vectoriels (Qdrant)", expanded=False):
+                    st.caption(f"**{len(result['sources']['vector_docs'])}** documents consultés")
                     for i, doc in enumerate(result["sources"]["vector_docs"], 1):
-                        st.markdown(f"**Source {i}:** {doc.metadata.get('source', 'N/A')}")
+                        st.markdown(f"""
+                            <div style='background: rgba(59, 130, 246, 0.1); padding: 0.75rem; border-radius: 8px; margin: 0.5rem 0;'>
+                                <strong>📄 Document {i}:</strong> <code style='font-size: 0.85rem;'>{doc.metadata.get('source', 'N/A')}</code>
+                            </div>
+                        """, unsafe_allow_html=True)
                         st.text(doc.page_content[:200] + "...")
-                        st.divider()
+                        if i < len(result["sources"]["vector_docs"]):
+                            st.divider()
 
             with col2:
-                with st.expander("🔗 Sources Neo4j (Graphe)"):
+                with st.expander("🔗 Relations Graphiques (Neo4j)", expanded=False):
                     graph_ctx = result["sources"]["graph_context"]
                     if graph_ctx:
-                        for item in graph_ctx:
-                            st.markdown(f"**Query:** {item['query_type']}")
+                        st.caption(f"**{len(graph_ctx)}** requêtes graphiques exécutées")
+                        for idx, item in enumerate(graph_ctx, 1):
+                            st.markdown(f"""
+                                <div style='background: rgba(16, 185, 129, 0.1); padding: 0.75rem; border-radius: 8px; margin: 0.5rem 0;'>
+                                    <strong>🔍 Requête {idx}:</strong> {item['query_type']}
+                                </div>
+                            """, unsafe_allow_html=True)
                             st.json(item["results"][:2])  # Afficher 2 premiers résultats
+                            if idx < len(graph_ctx):
+                                st.divider()
                     else:
-                        st.info("Aucune donnée relationnelle trouvée")
+                        st.info("ℹ️ Aucune donnée relationnelle trouvée")
 
     # TAB 3: Routeur intelligent
     with tab3:
-        st.header("Routeur Intelligent - Mode Automatique")
-        st.info("Le système choisit automatiquement la meilleure stratégie (RAG classique ou RAG+Graph)")
+        st.markdown("### 🧭 Routeur Intelligent - Mode Automatique")
+        st.markdown("""
+            <div style='background: rgba(147, 51, 234, 0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #9333ea; margin-bottom: 1.5rem;'>
+                <strong>💡 Mode:</strong> Sélection automatique de la stratégie optimale<br>
+                <strong>🎯 Idéal pour:</strong> Laisser l'IA décider entre RAG classique et RAG+Graph selon la complexité de la question
+            </div>
+        """, unsafe_allow_html=True)
 
         question_auto = st.text_input(
-            "Votre question:",
+            "💬 Posez votre question:",
             placeholder="Posez n'importe quelle question...",
-            key="auto"
+            key="auto",
+            help="Le système analysera votre question et choisira automatiquement la meilleure stratégie"
         )
 
         if question_auto:
             # Afficher la décision du routeur
-            with st.expander("🧭 Décision du routeur", expanded=True):
+            with st.expander("🧭 Analyse du routeur intelligent", expanded=True):
                 routing = hybrid_rag.explain_routing(question_auto)
-                st.markdown(f"**Stratégie choisie:** `{routing['strategy']}`")
-                st.markdown(routing['explanation'])
+                st.markdown(f"""
+                    <div style='background: rgba(147, 51, 234, 0.1); padding: 1rem; border-radius: 8px; margin: 0.5rem 0;'>
+                        <strong>🎯 Stratégie sélectionnée:</strong> <span class='badge badge-info' style='font-size: 1rem;'>{routing['strategy']}</span>
+                    </div>
+                """, unsafe_allow_html=True)
+                st.markdown(f"**📝 Explication:** {routing['explanation']}")
 
             # Exécuter la requête
-            with st.spinner("Traitement de la question..."):
+            with st.spinner("🤖 Traitement intelligent de la question..."):
                 result = hybrid_rag.query(question_auto, vector_store)
 
-            # Afficher badge de stratégie
-            if result["strategy"] == "multi_hop":
-                st.success("🔗 Stratégie: RAG Hybride (Qdrant + Neo4j)")
-            else:
-                st.info("📄 Stratégie: RAG Classique (Qdrant uniquement)")
+            st.markdown("---")
 
-            st.markdown("### Réponse")
-            st.write(result["answer"])
+
+
+            st.markdown("### ✨ Réponse")
+            st.markdown(f"""
+                <div style='background: rgba(16, 185, 129, 0.05); padding: 1.5rem; border-radius: 8px; margin: 1rem 0; font-size: 1.05rem; line-height: 1.6;'>
+                    {result["answer"]}
+                </div>
+            """, unsafe_allow_html=True)
 
             # Sources adaptées à la stratégie
+            st.markdown("### 📊 Sources consultées")
             if result["strategy"] == "multi_hop":
                 col1, col2 = st.columns(2)
                 with col1:
-                    with st.expander("📄 Sources Qdrant"):
+                    with st.expander("📄 Documents Qdrant", expanded=False):
+                        st.caption(f"**{len(result['sources']['vector_docs'])}** documents")
                         for i, doc in enumerate(result["sources"]["vector_docs"], 1):
-                            st.markdown(f"**Source {i}:** {doc.metadata.get('source', 'N/A')}")
+                            st.markdown(f"""
+                                <div style='background: rgba(59, 130, 246, 0.1); padding: 0.75rem; border-radius: 8px; margin: 0.5rem 0;'>
+                                    <strong>📄 {i}:</strong> <code style='font-size: 0.85rem;'>{doc.metadata.get('source', 'N/A')}</code>
+                                </div>
+                            """, unsafe_allow_html=True)
                             st.text(doc.page_content[:150] + "...")
                 with col2:
-                    with st.expander("🔗 Sources Neo4j"):
+                    with st.expander("🔗 Relations Neo4j", expanded=False):
                         graph_ctx = result["sources"].get("graph_context", [])
                         if graph_ctx:
-                            for item in graph_ctx:
-                                st.markdown(f"**{item['query_type']}**")
+                            st.caption(f"**{len(graph_ctx)}** requêtes graphiques")
+                            for idx, item in enumerate(graph_ctx, 1):
+                                st.markdown(f"""
+                                    <div style='background: rgba(16, 185, 129, 0.1); padding: 0.75rem; border-radius: 8px; margin: 0.5rem 0;'>
+                                        <strong>🔍 {idx}:</strong> {item['query_type']}
+                                    </div>
+                                """, unsafe_allow_html=True)
                                 st.json(item["results"][:1])
+                        else:
+                            st.info("ℹ️ Pas de données graphiques utilisées")
             else:
-                with st.expander("📄 Sources Qdrant"):
+                with st.expander("📄 Documents Qdrant consultés", expanded=False):
+                    st.caption(f"**{len(result['sources']['vector_docs'])}** documents pertinents")
                     for i, doc in enumerate(result["sources"]["vector_docs"], 1):
-                        st.markdown(f"**Source {i}:** {doc.metadata.get('source', 'N/A')}")
+                        st.markdown(f"""
+                            <div style='background: rgba(59, 130, 246, 0.1); padding: 0.75rem; border-radius: 8px; margin: 0.5rem 0;'>
+                                <strong>📄 Source {i}:</strong> <code>{doc.metadata.get('source', 'N/A')}</code>
+                            </div>
+                        """, unsafe_allow_html=True)
                         st.text(doc.page_content[:300] + "...")
-                        st.divider()
+                        if i < len(result["sources"]["vector_docs"]):
+                            st.divider()
 
     # TAB 4: Dashboard Métriques
     with tab4:
