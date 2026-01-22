@@ -128,40 +128,12 @@ else
     print_success ".env file exists"
 fi
 
-# Step 7: Verify data directory
-print_step "7️⃣  VERIFYING DATA FILES"
-if [ ! -d "data" ]; then
-    print_error "data/ directory not found"
-    exit 1
-fi
-
-required_files=(
-    "data/greenpower_products_enriched.json"
-    "data/greenpower_events_enriched.json"
-    "data/greenpower_rd_innovations.json"
-)
-
-all_files_exist=true
-for file in "${required_files[@]}"; do
-    if [ -f "$file" ]; then
-        print_success "Found: $file"
-    else
-        print_error "Missing: $file"
-        all_files_exist=false
-    fi
-done
-
-if [ "$all_files_exist" = false ]; then
-    print_error "Some required data files are missing"
-    exit 1
-fi
-
-# Step 8: Initialize system
-print_step "8️⃣  SYSTEM INITIALIZATION"
+# Step 7: Initialize system
+print_step "7️⃣  SYSTEM INITIALIZATION"
 print_info "Running initialization script..."
 python init_system.py
 
-# Step 9: Summary and next steps
+# Step 8: Summary and next steps
 print_step "🎉 DEPLOYMENT COMPLETE"
 echo ""
 print_success "GreenPower RAG Hybrid System is ready!"

@@ -17,6 +17,7 @@ from qdrant_client import QdrantClient
 from pypdf import PdfReader
 from hybrid_rag import HybridRAG, QueryExamples
 from dashboard import render_dashboard
+from pixtral_processor import PixtralPDFProcessor
 
 # Configuration
 load_dotenv()
@@ -50,6 +51,7 @@ def load_csv(file_path):
     return documents
 
 def load_pdf(file_path):
+    """Version classique pypdf (fallback)"""
     reader = PdfReader(file_path)
     documents = []
     for i, page in enumerate(reader.pages):
@@ -59,6 +61,43 @@ def load_pdf(file_path):
                 Document(page_content=text, metadata={"source": file_path, "type": "pdf", "page": i})
             )
     return documents
+
+def load_pdf_with_pixtral(file_path):
+    """
+    Charge un PDF avec traitement Pixtral optionnel.
+    Fallback gracieux vers pypdf en cas d'erreur.
+    """
+    # Récupérer le paramètre use_pixtral depuis session_state
+    use_pixtral = st.session_state.get('use_pixtral', True)
+
+    if not use_pixtral:
+        return load_pdf(file_path)
+
+    try:
+        processor = PixtralPDFProcessor(
+            mistral_api_key=MISTRAL_API_KEY,
+            model="pixtral-12b-2409",
+            cache_images=False
+        )
+
+        # Callback de progression pour Streamlit
+        def progress_callback(current, total):
+            st.sidebar.info(f"🔍 Analyse Pixtral: Page {current}/{total}")
+
+        documents = processor.process_pdf_complete(
+            file_path,
+            dpi=200,
+            progress_callback=progress_callback
+        )
+
+        if documents:
+            st.sidebar.success(f"✅ {len(documents)} chunks enrichis créés avec Pixtral!")
+
+        return documents
+
+    except Exception as e:
+        st.warning(f"⚠️ Erreur Pixtral pour {Path(file_path).name}, fallback sur pypdf: {e}")
+        return load_pdf(file_path)
 
 def load_documents_from_directory(directory):
     all_documents = []
@@ -71,7 +110,7 @@ def load_documents_from_directory(directory):
         '.txt': load_txt,
         '.json': load_json,
         '.csv': load_csv,
-        '.pdf': load_pdf
+        '.pdf': load_pdf_with_pixtral  # Utilise Pixtral par défaut
     }
 
     for file_path in data_path.rglob('*'):
@@ -422,6 +461,30 @@ def main():
                     st.error(f"❌ Erreur: {e}")
                 finally:
                     loader.close()
+
+        st.divider()
+
+        st.markdown("### 🎨 Mode Vision Pixtral")
+        use_pixtral = st.toggle(
+            "Activer Pixtral Vision pour PDFs",
+            value=True,
+            help="Utilise Pixtral pour analyser visuellement les PDFs (tableaux, images, structure)",
+            key="use_pixtral"
+        )
+
+        if use_pixtral:
+            st.markdown("""
+                <div style='background: rgba(147, 51, 234, 0.1); padding: 0.75rem; border-radius: 8px; border-left: 4px solid #9333ea; margin: 0.5rem 0; font-size: 0.85rem;'>
+                    ✨ <strong>Mode Vision activé</strong><br>
+                    Extraction intelligente de texte, tableaux et images/graphiques
+                </div>
+            """, unsafe_allow_html=True)
+        else:
+            st.markdown("""
+                <div style='background: rgba(100, 116, 139, 0.1); padding: 0.75rem; border-radius: 8px; margin: 0.5rem 0; font-size: 0.85rem;'>
+                    Mode extraction texte classique (pypdf)
+                </div>
+            """, unsafe_allow_html=True)
 
         st.divider()
 

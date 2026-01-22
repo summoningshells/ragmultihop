@@ -146,9 +146,10 @@ Le système RAG hybride est prêt!
    - Requêtes Neo4j: python neo4j_query.py
 
 💡 Conseils:
+   - Uploadez vos documents PDF dans l'application
+   - Pixtral Vision est activé par défaut pour l'analyse intelligente des PDFs
    - Onglet "Routeur Intelligent" recommandé (choix automatique)
-   - Essayez les questions d'exemple dans la sidebar
-   - Le graphe Neo4j contient 66 nœuds et 149 relations
+   - Si Neo4j est vide, l'application utilisera uniquement Qdrant pour le RAG
     """)
 
 def main():
@@ -174,10 +175,10 @@ def main():
         print("\n❌ L'initialisation a échoué. Vérifiez les erreurs ci-dessus.")
         sys.exit(1)
 
-    # Charger Neo4j
-    if not load_neo4j_data():
-        print("\n❌ Échec du chargement Neo4j")
-        sys.exit(1)
+    # Charger Neo4j (non-bloquant)
+    neo4j_loaded = load_neo4j_data()
+    if not neo4j_loaded:
+        print("\n⚠️  Le chargement Neo4j a échoué, mais l'application peut fonctionner avec Qdrant uniquement")
 
     # Résumé
     show_summary()

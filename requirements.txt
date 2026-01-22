@@ -7,3 +7,6 @@ qdrant-client>=1.16.0
 neo4j>=5.14.0
 streamlit>=1.29.0
 pypdf>=3.17.0
+pdf2image>=1.17.0
+Pillow>=10.0.0
+mistralai>=1.0.0

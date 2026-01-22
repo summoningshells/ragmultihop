@@ -34,6 +34,10 @@ class Neo4jLoader:
 
     def load_products(self, products_file="data/greenpower_products_enriched.json"):
         """Charge les produits dans Neo4j"""
+        if not os.path.exists(products_file):
+            print(f"⚠️  Fichier {products_file} non trouvé - ignoré")
+            return
+
         with open(products_file, 'r', encoding='utf-8') as f:
             data = json.load(f)
 
@@ -96,6 +100,10 @@ class Neo4jLoader:
 
     def load_events(self, events_file="data/greenpower_events_enriched.json"):
         """Charge les événements (trade shows, powered events) dans Neo4j"""
+        if not os.path.exists(events_file):
+            print(f"⚠️  Fichier {events_file} non trouvé - ignoré")
+            return
+
         with open(events_file, 'r', encoding='utf-8') as f:
             data = json.load(f)
 
@@ -233,6 +241,10 @@ class Neo4jLoader:
 
     def load_rd_projects(self, rd_file="data/greenpower_rd_innovations.json"):
         """Charge les projets R&D dans Neo4j"""
+        if not os.path.exists(rd_file):
+            print(f"⚠️  Fichier {rd_file} non trouvé - ignoré")
+            return
+
         with open(rd_file, 'r', encoding='utf-8') as f:
             data = json.load(f)
 
@@ -271,10 +283,30 @@ class Neo4jLoader:
         print("Début du chargement des données dans Neo4j...")
         self.clear_database()
         self.create_indexes()
+
+        # Charger les données si les fichiers existent
+        files_loaded = 0
+
+        print("\nChargement des fichiers de données...")
         self.load_products()
+        if os.path.exists("data/greenpower_products_enriched.json"):
+            files_loaded += 1
+
         self.load_events()
+        if os.path.exists("data/greenpower_events_enriched.json"):
+            files_loaded += 1
+
         self.load_rd_projects()
-        print("Chargement terminé avec succès!")
+        if os.path.exists("data/greenpower_rd_innovations.json"):
+            files_loaded += 1
+
+        if files_loaded == 0:
+            print("\n⚠️  Aucun fichier de données JSON trouvé dans data/")
+            print("   Le graphe Neo4j est vide mais prêt à recevoir des données")
+            print("   L'application fonctionnera avec Qdrant uniquement pour le RAG")
+        else:
+            print(f"\n✅ {files_loaded} fichier(s) chargé(s) avec succès!")
+            print("   Chargement terminé!")
 
     def verify_data(self):
         """Vérifie les données chargées"""
